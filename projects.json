@@ -67,6 +67,33 @@
       }
     },
     {
+      "slug": "recipes",
+      "title": "Recipes",
+      "featured": true,
+      "categories": [
+        "tools"
+      ],
+      "kind": "Public recipe website",
+      "browserApp": false,
+      "description": "A searchable, printable collection of family recipes and recipes recovered from earlier notes and conversations. Ingredients and instructions appear together in cooking order.",
+      "technology": "Python · HTML / CSS / JavaScript",
+      "note": "Preserves the original recipe formatting, with optional higher contrast and a printer-friendly layout.",
+      "site": {
+        "url": "https://rharriszzz.github.io/recipes/",
+        "detail": "Browse and print recipes · GitHub Pages"
+      },
+      "placeholder": "Recipes & cooking notes",
+      "placeholderDetail": "Public recipe collection · browse online",
+      "repository": {
+        "url": "https://github.com/rharriszzz/recipes",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-11-01",
+        "branch": "main"
+      }
+    },
+    {
       "slug": "beads",
       "title": "Beads",
       "featured": true,
