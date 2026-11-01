@@ -84,7 +84,7 @@ def render_card(project):
                  f'<figcaption>{escape(im["caption"])}</figcaption></figure>')
     else:
         media = (f'<div class="image-placeholder" aria-label="No application screenshot available">'
-                 f'<span>{escape(p.get("placeholder", p["title"]))}</span><small>Local application · source available</small></div>')
+                 f'<span>{escape(p.get("placeholder", p["title"]))}</span><small>{escape(p.get("placeholderDetail", "Local application · source available"))}</small></div>')
     note = f'<p class="card-note">{escape(p["note"])}</p>' if p.get("note") else ""
     live = (f'<a class="live-link" href="{escape(p["site"]["url"])}" aria-label="{escape(p["title"])} — Live Site">'
             'Live Site <span aria-hidden="true">↗</span></a>') if "site" in p else ""
