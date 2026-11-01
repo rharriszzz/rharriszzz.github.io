@@ -37,8 +37,7 @@ HTTP server serving the actual generated `dist/` artifact.
 - With JavaScript disabled through DevTools, all 16 entries and repository/live
   links remain present, filter controls stay hidden, and the fallback explanation
   is shown. JavaScript was re-enabled after this check.
-- The page console had no application messages on inspection. Browser extension
-  warnings in the toolbar are separate from application errors.
+- The page console had no application messages on inspection.
 - Reversi was exercised on its production URL: Black D3 triggered White C5, and
   the WebAssembly coach showed ranked continuations. Its screenshot captures
   this actual state.
@@ -63,5 +62,23 @@ screenshot is copied from its already public landing-page assets.
 
 The deployment workflow runs the same tests and script syntax check, uploads only
 `dist/`, and gives deployment permissions only to its main-branch deploy job.
-Pull requests do not deploy. Production verification is recorded below after
-the initial workflow completes.
+Pull requests do not deploy.
+
+## Production verification
+
+- The initial [build and Pages deployment](https://github.com/rharriszzz/rharriszzz.github.io/actions/runs/41329443718)
+  passed both jobs and published https://rharriszzz.github.io/.
+- `python3 scripts/check_links.py --base-url https://rharriszzz.github.io/`:
+  **39 URLs passed**, including every published image, stylesheet, script,
+  favicon, catalog, project repository, public site, and image-source link.
+- SHA-256 comparisons confirmed that the production HTML, catalog, CSS, JS,
+  favicon, and all seven project images match the locally reviewed build exactly.
+- The production page was opened in Chrome and showed the complete directory
+  and active filter controls.
+- Production requests for `README.md`, `scripts/build.py`, `docs/INVENTORY.md`,
+  and `.git/config` returned **404**, as expected for the publication allowlist.
+- The first run exposed deprecation warnings in older official Pages actions.
+  The workflow was updated to the current official major releases: checkout,
+  setup-python, and setup-node v7; configure-pages v6; upload-pages-artifact v5;
+  deploy-pages v5. Versions were checked against their official GitHub releases.
+  Subsequent runs are available in the repository’s Actions history.
