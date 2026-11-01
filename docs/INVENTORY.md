@@ -6,8 +6,8 @@ requests, HTTPS checks, and browser inspection. No other repository was modified
 The original API snapshots and local investigation files were kept outside this
 checkout and are not part of the published artifact.
 
-The inventory contained **17 public repositories**: eight selected projects,
-eight secondary projects, and this central index. All 16 other public repositories
+The inventory contains **18 public repositories**: nine selected projects,
+eight secondary projects, and this central index. All 17 other public repositories
 are included. No private repository names, data, or files are included. No repository
 was marked archived in GitHub. “Historical” below describes age and context, not
 GitHub’s archived flag or an assertion that the code is unsupported.
@@ -16,6 +16,7 @@ GitHub’s archived flag or an assertion that the code is unsupported.
 | --- | --- | --- | --- | --- |
 | reversi | 2026-11-01 | Original; recent; interactive browser game and coach | GitHub Pages; playable, engine responds after a move | README, index, Pages workflow/settings, public app, icon, research diagrams; fresh screenshot captured |
 | arxiv-shelf | 2026-11-01 | Original; recent; local PDF library | GitHub Pages introduction; separately hosted browser edition may require permission | README, docs/index.html, public screenshot, workflow/settings; no catalog files copied |
+| recipes | 2026-11-01 | Original; new static recipe collection | GitHub Pages recipe browser and print-friendly pages; production deployment documented | README, migration report, Pages workflow, production QA; typographic placeholder (no fabricated screenshot) |
 | beads | 2026-10-21 | Original; recent geometry note in a historical photographic/render collection | None verified; Pages disabled | No README; beads.html, beads.pov, BEADS_POV_SINE_ANGLE.md, original reference photographs and rendered images |
 | madweave | 2017-07-30 | Original; historical; interactive JavaScript/SVG weaving app | Documented fiberwoman.com host could not be verified; Pages disabled | README, index.html, MadWeaver.html, madweave.html, source tree, interface PNG and SVG assets |
 | navier-stokes-vortex-lab | 2026-09-27 | Original; recent visualization and boundary-control research | No published site found; Pages disabled | README, STATUS.md, source tree, preview.png and rendering evidence; finite kinematic-model limits retained |
@@ -54,7 +55,8 @@ committed illustrative tank preview. Physical Approximation uses the published
 explicit comparison plot, whose title states that nonlinear core corrections
 are omitted. Symphonium uses its generated sampler SVG, not a photo of a tested
 physical disc. FFT Image Explorer has a neutral text panel rather than a
-fabricated interface.
+fabricated interface. Recipes likewise uses a typographic panel until a genuine
+site screenshot is available.
 
 Supporting tools have compact text entries to keep the main directory readable.
 Existing HIS Profile and image-mask figures were inspected but not copied into
