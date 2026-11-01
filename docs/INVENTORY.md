@@ -18,7 +18,7 @@ GitHub’s archived flag or an assertion that the code is unsupported.
 | arxiv-shelf | 2026-11-01 | Original; recent; local PDF library | GitHub Pages introduction; separately hosted browser edition may require permission | README, docs/index.html, public screenshot, workflow/settings; no catalog files copied |
 | recipes | 2026-11-01 | Original; new static recipe collection | GitHub Pages recipe browser and print-friendly pages; production deployment documented | README, migration report, Pages workflow, production QA; typographic placeholder (no fabricated screenshot) |
 | beads | 2026-11-01 | Original; curated pattern, geometry and photographic research; full archive retained on its research branch | https://rharriszzz.github.io/beads/ — GitHub Pages introduction and small pattern viewer; live desktop/mobile interactions verified | New README/topical docs, pinned source provenance, actual photo/R344/R345/R346 figures, separate R347 evidence epoch, standalone graph-paper code/tests, explicit publication allowlist; historical gallery retained |
-| madweave | 2017-07-30 | Original; historical; interactive JavaScript/SVG weaving app | Documented fiberwoman.com host could not be verified; Pages disabled | README, index.html, MadWeaver.html, madweave.html, source tree, interface PNG and SVG assets |
+| madweave | 2026-11-01 | Original; interactive JavaScript/SVG weaving app, with preserved historical material | GitHub Pages introduction, live editor, guide, and static SVG artwork export | New README, development/testing docs and improvement backlog; original SVG assets; browser-tested restoration fixes and artwork export |
 | navier-stokes-vortex-lab | 2026-09-27 | Original; recent visualization and boundary-control research | No published site found; Pages disabled | README, STATUS.md, source tree, preview.png and rendering evidence; finite kinematic-model limits retained |
 | navier-stokes-physical-approximation | 2026-09-10 | Original; recent numerical/physical research | No published site found; Pages disabled | README, source/config/test tree and committed baseline/reference plots; no accepted nonlinear core claimed |
 | symphonium-disc-maker | 2026-10-02 | Original; recent geometry/fabrication experiment | No published site found; Pages disabled | README, source/test tree, pyproject, reference figures, prototype SVG; pending physical fit retained |
@@ -35,8 +35,8 @@ GitHub’s archived flag or an assertion that the code is unsupported.
 
 The Madweave README names `http://fiberwoman.com/madweave/MadWeaver.html`.
 Both HTTP and HTTPS probes returned HTTP 465 in this environment, so availability
-could not be established. The index intentionally offers only the repository;
-it does not claim the independent site is down. IzODA’s homepage is omitted
+could not be established. The updated entry links to the newly verified GitHub Pages site;
+it does not claim the independent historical site is down. IzODA’s homepage is omitted
 because the actual GET returned 404. NumPy’s upstream site is not presented as
 a personal project deployment.
 
@@ -73,6 +73,14 @@ conditional: 201 supported / 0 conflicting / 7 insufficient, with 1040/1040
 retained-label agreement, is not independent chart/object validation. The existing
 index photograph and all other catalog entries remain unchanged. This scoped
 follow-up is not a new full review of the other repositories.
+
+The MadWeave entry was updated separately on 2026-11-01 after its project site
+was deployed and exercised in Chromium. The follow-up covers the landing page,
+user guide, embedded SVG editor, pattern/size/spacing controls, and static artwork
+export. The existing authentic interface image is retained. The description
+explicitly distinguishes artwork export from future editable project saving,
+and keeps the original editor's mouse/trackpad limitation visible. This scoped
+follow-up does not re-review unrelated projects.
 
 The link checker verifies URLs and assets; manual app and responsive checks are
 recorded in `docs/VALIDATION.md`. A current last-push timestamp is not evidence of

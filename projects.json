@@ -127,17 +127,17 @@
     },
     {
       "slug": "madweave",
-      "title": "Madweave",
+      "title": "MadWeave",
       "featured": true,
       "categories": [
         "craft",
         "visualization"
       ],
-      "kind": "Browser app · source available",
+      "kind": "Browser app · interactive weaving editor",
       "browserApp": true,
-      "description": "Explore triaxial weaving: three directions of interlacing strips, with controls for colors, patterns, and the over-and-under structure of a weave.",
+      "description": "Design triaxial weaves with three directions of interlacing strips. Explore five built-in patterns, eight palette colors, layers and spacing, then export your artwork as SVG.",
       "technology": "JavaScript · SVG",
-      "note": "Historical project. The host documented in the README could not be verified; use the repository to explore or run it.",
+      "note": "Original SVG editor with a new user guide and static artwork export. Use a mouse or trackpad; editable project saving and full keyboard/touch controls remain future work.",
       "image": {
         "path": "assets/images/madweave.png",
         "alt": "Madweave interface showing a pink, yellow, and purple triaxial weave with color and pattern controls.",
@@ -149,8 +149,12 @@
         "public": true,
         "fork": false,
         "archived": false,
-        "lastPushed": "2017-07-30",
+        "lastPushed": "2026-11-01",
         "branch": "master"
+      },
+      "site": {
+        "url": "https://rharriszzz.github.io/madweave/",
+        "detail": "GitHub Pages · project introduction, interactive editor, and user guide"
       }
     },
     {

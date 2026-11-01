@@ -82,3 +82,23 @@ Pull requests do not deploy.
   setup-python, and setup-node v7; configure-pages v6; upload-pages-artifact v5;
   deploy-pages v5. Versions were checked against their official GitHub releases.
   Subsequent runs are available in the repository’s Actions history.
+
+## MadWeave follow-up — 2026-11-01
+
+The featured MadWeave entry now links to its published GitHub Pages project site,
+with a current description of patterns, palette colors, and static SVG artwork
+export. Its note identifies the mouse/trackpad requirement and distinguishes
+artwork download from future editable project saving. The original public
+interface image remains the catalog image.
+
+Before adding the live link, the MadWeave [test and deployment run](https://github.com/rharriszzz/madweave/actions/runs/41358872009)
+passed. Chromium then opened the deployed landing page, guide, and editor at
+1280, 390, and 320 CSS-pixel widths. There was no document-level horizontal
+overflow, failed HTTP response, or JavaScript exception. On the public embedded
+SVG, real pointer clicks changed a pattern, selected 24 strips per direction,
+and changed spacing. Static SVG export downloaded successfully without scripts.
+This is desktop Chromium responsive emulation, not physical touch-device testing.
+
+The central index's seven Python tests, build, JavaScript syntax check, and
+whitespace check pass with the changed catalog entry. The update is scoped to
+MadWeave; it does not repeat the full repository inventory review.
