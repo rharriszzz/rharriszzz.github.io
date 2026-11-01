@@ -135,9 +135,9 @@
       ],
       "kind": "Browser app · interactive weaving editor",
       "browserApp": true,
-      "description": "Design triaxial weaves with three directions of interlacing strips. Explore five built-in patterns, eight palette colors, layers and spacing, then export your artwork as SVG.",
+      "description": "Design triaxial weaves with three directions of interlacing strips. Explore patterns, colors, layers and spacing; save editable projects for offline use or export SVG artwork.",
       "technology": "JavaScript · SVG",
-      "note": "Original SVG editor with a new user guide and static artwork export. Use a mouse or trackpad; editable project saving and full keyboard/touch controls remain future work.",
+      "note": "Save and reopen complete projects, including original editable SVG files. Use a mouse or trackpad; full keyboard/touch controls remain future work.",
       "image": {
         "path": "assets/images/madweave.png",
         "alt": "Madweave interface showing a pink, yellow, and purple triaxial weave with color and pattern controls.",
@@ -154,7 +154,7 @@
       },
       "site": {
         "url": "https://rharriszzz.github.io/madweave/",
-        "detail": "GitHub Pages · project introduction, interactive editor, and user guide"
+        "detail": "GitHub Pages · interactive editor, offline project saving, and user guide"
       }
     },
     {

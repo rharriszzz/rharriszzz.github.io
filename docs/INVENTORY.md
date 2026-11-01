@@ -78,7 +78,7 @@ The MadWeave entry was updated separately on 2026-11-01 after its project site
 was deployed and exercised in Chromium. The follow-up covers the landing page,
 user guide, embedded SVG editor, pattern/size/spacing controls, and static artwork
 export. The existing authentic interface image is retained. The description
-explicitly distinguishes artwork export from future editable project saving,
+now includes complete offline editable project saving and original SVG import,
 and keeps the original editor's mouse/trackpad limitation visible. This scoped
 follow-up does not re-review unrelated projects.
 

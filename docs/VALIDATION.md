@@ -102,3 +102,25 @@ This is desktop Chromium responsive emulation, not physical touch-device testing
 The central index's seven Python tests, build, JavaScript syntax check, and
 whitespace check pass with the changed catalog entry. The update is scoped to
 MadWeave; it does not repeat the full repository inventory review.
+
+
+## Editable MadWeave projects — 2026-11-01
+
+The catalog now describes Save Project/Open Project and offline editing instead
+of listing editable saving as future work. Self-contained HTML projects preserve
+all design settings and include their engine, scripts, styles, and pattern
+images. Original editable SVG import and static artwork export remain distinct.
+
+The local project suite passes in Chromium and Firefox. Separate checks of the
+installed Windows Chrome 156.0.8078.48, Edge 156.0.4314.58, and Firefox 158.0.1
+passed offline opening, editing, saving, direct reopening, and Open Project in
+isolated test profiles. The central catalog's seven tests and script syntax
+check pass after its text update. Actual Mac browser checks remain with the
+user; the project includes a short acceptance checklist.
+
+The [three-engine test and deployment run](https://github.com/rharriszzz/madweave/actions/runs/41361706822)
+passed Chromium, Firefox, WebKit, and deployment. On the public site, Chromium
+then verified Save Project, direct offline opening, further editing and saving,
+reopening that new copy, and Open Project importing it back into the site. The
+landing page, guide, and editor fit three viewport widths, and static export
+still worked. There were no page exceptions or failed HTTP responses.
