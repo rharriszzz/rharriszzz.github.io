@@ -1,0 +1,396 @@
+{
+  "verifiedOn": "2026-11-01",
+  "owner": "rharriszzz",
+  "projects": [
+    {
+      "slug": "reversi",
+      "title": "Reversi",
+      "featured": true,
+      "categories": [
+        "games",
+        "tools"
+      ],
+      "kind": "Interactive browser app",
+      "browserApp": true,
+      "description": "Play Reversi against an original search engine, compare legal moves with the strategy coach, and replay your decisions to explore different continuations.",
+      "technology": "JavaScript · C++ / WebAssembly",
+      "note": "Play directly in your browser, including on iPhone.",
+      "site": {
+        "url": "https://rharriszzz.github.io/reversi/",
+        "detail": "Playable app · GitHub Pages"
+      },
+      "image": {
+        "path": "assets/images/reversi.png",
+        "alt": "Reversi board after two moves, alongside the coach’s ranked legal moves and search scores.",
+        "caption": "Actual browser game and strategy coach",
+        "source": "https://rharriszzz.github.io/reversi/"
+      },
+      "repository": {
+        "url": "https://github.com/rharriszzz/reversi",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-11-01",
+        "branch": "main"
+      }
+    },
+    {
+      "slug": "arxiv-shelf",
+      "title": "arXiv Shelf",
+      "featured": true,
+      "categories": [
+        "tools",
+        "research"
+      ],
+      "kind": "Local app + public introduction",
+      "browserApp": false,
+      "description": "A searchable local library for arXiv PDFs, with titles, authors, abstracts, ratings, and tools for finding and opening papers across computers.",
+      "technology": "Python · HTML / CSS / JavaScript",
+      "note": "The public site explains the project. Its separately hosted browser library may require access permission.",
+      "site": {
+        "url": "https://rharriszzz.github.io/arxiv-shelf/",
+        "detail": "Project introduction · GitHub Pages"
+      },
+      "image": {
+        "path": "assets/images/arxiv-shelf.png",
+        "alt": "Publicly documented arXiv Shelf screenshot showing paper search, filters, ratings, and a list of papers.",
+        "caption": "Browser edition · screenshot from the public project site",
+        "source": "https://github.com/rharriszzz/arxiv-shelf/blob/master/docs/assets/arxiv-shelf-live.png"
+      },
+      "repository": {
+        "url": "https://github.com/rharriszzz/arxiv-shelf",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-11-01",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "beads",
+      "title": "Beads",
+      "featured": true,
+      "categories": [
+        "craft",
+        "visualization"
+      ],
+      "kind": "Geometry & pattern research",
+      "browserApp": false,
+      "description": "Photographs, procedural bead geometry, and POV-Ray models for studying beaded ropes and recovering their repeating color patterns. Related image-analysis tools appear below.",
+      "technology": "POV-Ray · Photographic references",
+      "note": "Exploratory reconstruction materials; rendered geometry does not establish the dimensions of the photographed object.",
+      "image": {
+        "path": "assets/images/beads.jpg",
+        "alt": "A red, yellow, and black beaded rope arranged on a pink background, used as a photographic reference.",
+        "caption": "Original photographic reference from the repository",
+        "source": "https://github.com/rharriszzz/beads/blob/master/beads-photo-2.jpg"
+      },
+      "repository": {
+        "url": "https://github.com/rharriszzz/beads",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-10-21",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "madweave",
+      "title": "Madweave",
+      "featured": true,
+      "categories": [
+        "craft",
+        "visualization"
+      ],
+      "kind": "Browser app · source available",
+      "browserApp": true,
+      "description": "Explore triaxial weaving: three directions of interlacing strips, with controls for colors, patterns, and the over-and-under structure of a weave.",
+      "technology": "JavaScript · SVG",
+      "note": "Historical project. The host documented in the README could not be verified; use the repository to explore or run it.",
+      "image": {
+        "path": "assets/images/madweave.png",
+        "alt": "Madweave interface showing a pink, yellow, and purple triaxial weave with color and pattern controls.",
+        "caption": "Existing Madweave interface image",
+        "source": "https://github.com/rharriszzz/madweave/blob/master/madweave.png"
+      },
+      "repository": {
+        "url": "https://github.com/rharriszzz/madweave",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2017-07-30",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "navier-stokes-vortex-lab",
+      "title": "Navier–Stokes Vortex Lab",
+      "featured": true,
+      "categories": [
+        "research",
+        "visualization"
+      ],
+      "kind": "Visualization & experimental research",
+      "browserApp": false,
+      "description": "A Python and POV-Ray pipeline for visualizing finite-scale swirling flow, alongside research into boundary control and the feasibility of a physical water experiment.",
+      "technology": "Python · POV-Ray · ffmpeg",
+      "note": "The rendered tracer model is a kinematic analogue, not a validated Navier–Stokes solution or a demonstration of a singularity.",
+      "image": {
+        "path": "assets/images/navier-stokes-vortex-lab.png",
+        "alt": "POV-Ray preview of a transparent blue tank containing green tracer markers.",
+        "caption": "Repository render · illustrative tracer visualization",
+        "source": "https://github.com/rharriszzz/navier-stokes-vortex-lab/blob/main/preview.png"
+      },
+      "repository": {
+        "url": "https://github.com/rharriszzz/navier-stokes-vortex-lab",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-09-27",
+        "branch": "main"
+      }
+    },
+    {
+      "slug": "navier-stokes-physical-approximation",
+      "title": "Navier–Stokes Physical Approximation",
+      "featured": true,
+      "categories": [
+        "research"
+      ],
+      "kind": "Numerical & physical research",
+      "browserApp": false,
+      "description": "Investigates finite approximations, scale separation, pressure schedules, and numerical residuals in concentrating-flow models, with reproducible experiments and preserved negative results.",
+      "technology": "Python · Numerical analysis",
+      "note": "Experimental models remain outside the theorem’s assumptions. No nonlinear core solution or physical realizability is established.",
+      "image": {
+        "path": "assets/images/navier-stokes-physical-approximation.png",
+        "alt": "Four comparison plots of radial, azimuthal, and axial velocity and speed at different scales; nonlinear core corrections are omitted.",
+        "caption": "Published baseline · explicit comparison profiles",
+        "source": "https://github.com/rharriszzz/navier-stokes-physical-approximation/blob/master/results/core-comparison/physical_profiles.png"
+      },
+      "repository": {
+        "url": "https://github.com/rharriszzz/navier-stokes-physical-approximation",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-09-10",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "symphonium-disc-maker",
+      "title": "Symphonium Disc Maker",
+      "featured": true,
+      "categories": [
+        "craft",
+        "tools"
+      ],
+      "kind": "Music-box geometry & fabrication",
+      "browserApp": false,
+      "description": "Turn note arrangements into SVG and DXF geometry for a 20-note music-box disc, with measured track layouts, drive holes, and printable labels.",
+      "technology": "Python · SVG / DXF",
+      "note": "Reverse-engineering and prototype work; manufactured fit and playback remain to be tested.",
+      "image": {
+        "path": "assets/images/symphonium-disc-maker.svg",
+        "alt": "Generated Pachelbel sampler disc drawing with circular note tracks, music holes, and a ring of drive holes.",
+        "caption": "Actual generated Pachelbel sampler disc geometry",
+        "source": "https://github.com/rharriszzz/symphonium-disc-maker/blob/main/prototype_pack/pachelbel_preview.svg"
+      },
+      "repository": {
+        "url": "https://github.com/rharriszzz/symphonium-disc-maker",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-10-02",
+        "branch": "main"
+      }
+    },
+    {
+      "slug": "fft-image-explorer",
+      "title": "FFT Image Explorer",
+      "featured": true,
+      "categories": [
+        "visualization",
+        "tools"
+      ],
+      "kind": "Interactive local Python app",
+      "browserApp": false,
+      "description": "Inspect color images in spatial and frequency domains. Adjust channels, masks, windows, and frequency filters, then compare the input, FFT, and reconstructed image.",
+      "technology": "Python · NumPy · Matplotlib",
+      "note": "Runs in a local desktop window. Includes a bracelet boundary and centerline scanner.",
+      "placeholder": "Spatial ↔ Frequency",
+      "repository": {
+        "url": "https://github.com/rharriszzz/fft-image-explorer",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-07-11",
+        "branch": "main"
+      }
+    },
+    {
+      "slug": "bead_map",
+      "title": "Bead Map",
+      "featured": false,
+      "categories": [
+        "craft",
+        "tools"
+      ],
+      "kind": "Image-analysis experiments",
+      "browserApp": false,
+      "description": "Python experiments for detecting bead regions and tracing bracelet centerlines from color masks.",
+      "technology": "Python · scikit-image · SciPy",
+      "repository": {
+        "url": "https://github.com/rharriszzz/bead_map",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2025-04-28",
+        "branch": "main"
+      }
+    },
+    {
+      "slug": "hsv_tools",
+      "title": "HSV Tools",
+      "featured": false,
+      "categories": [
+        "visualization",
+        "tools"
+      ],
+      "kind": "Local image utilities",
+      "browserApp": false,
+      "description": "Pick HSV color ranges, inspect color counts, and produce masks for photographic bead analysis.",
+      "technology": "Python · Image processing",
+      "repository": {
+        "url": "https://github.com/rharriszzz/hsv_tools",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2025-04-26",
+        "branch": "main"
+      }
+    },
+    {
+      "slug": "sound",
+      "title": "Sound",
+      "featured": false,
+      "categories": [
+        "research",
+        "tools"
+      ],
+      "kind": "Historical experiments",
+      "browserApp": false,
+      "description": "C experiments in Fourier transforms, harmonics, test signals, and plotting.",
+      "technology": "C · FFT",
+      "repository": {
+        "url": "https://github.com/rharriszzz/sound",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2017-07-30",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "HIS_profile",
+      "title": "HIS Profile",
+      "featured": false,
+      "categories": [
+        "tools"
+      ],
+      "kind": "Historical mainframe tooling",
+      "browserApp": false,
+      "description": "Collect and explore IBM z/OS Hardware Instrumentation Services profiling data, including tree views in notebooks.",
+      "technology": "Python · C · z/OS",
+      "repository": {
+        "url": "https://github.com/rharriszzz/HIS_profile",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2020-06-22",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "zos_python",
+      "title": "z/OS Python",
+      "featured": false,
+      "categories": [
+        "tools"
+      ],
+      "kind": "Historical mainframe tooling",
+      "browserApp": false,
+      "description": "Python and C interfaces for z/OS system services, including datasets, dynamic allocation, job submission, and profiling.",
+      "technology": "Python · C · z/OS",
+      "repository": {
+        "url": "https://github.com/rharriszzz/zos_python",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2020-09-21",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "izODA.github.io",
+      "title": "IzODA documentation",
+      "featured": false,
+      "categories": [
+        "tools"
+      ],
+      "kind": "Historical documentation",
+      "browserApp": false,
+      "description": "Preserved website source for IBM Open Data Analytics for z/OS, covering Anaconda, Spark, and Open Data Layer. Its old public homepage is unavailable.",
+      "technology": "HTML · Documentation",
+      "repository": {
+        "url": "https://github.com/rharriszzz/izODA.github.io",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2017-10-13",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "numpy",
+      "title": "NumPy fork",
+      "featured": false,
+      "categories": [
+        "tools",
+        "research"
+      ],
+      "kind": "Historical fork",
+      "browserApp": false,
+      "description": "An older fork of NumPy, the scientific computing library. Retained here for discoverability; this is not the upstream project.",
+      "technology": "Python · C",
+      "repository": {
+        "url": "https://github.com/rharriszzz/numpy",
+        "public": true,
+        "fork": true,
+        "archived": false,
+        "lastPushed": "2019-03-14",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "python-ibmdb",
+      "title": "Python IBM DB fork",
+      "featured": false,
+      "categories": [
+        "tools"
+      ],
+      "kind": "Historical fork",
+      "browserApp": false,
+      "description": "An older fork of the Python drivers for IBM Db2 and Informix, including the DB-API interface.",
+      "technology": "Python · IBM databases",
+      "repository": {
+        "url": "https://github.com/rharriszzz/python-ibmdb",
+        "public": true,
+        "fork": true,
+        "archived": false,
+        "lastPushed": "2019-11-22",
+        "branch": "master"
+      }
+    }
+  ]
+}
