@@ -105,7 +105,11 @@
       "browserApp": false,
       "description": "Photographs, procedural bead geometry, and POV-Ray models for studying beaded ropes and recovering their repeating color patterns. Related image-analysis tools appear below.",
       "technology": "POV-Ray · Photographic references",
-      "note": "Exploratory reconstruction materials; rendered geometry does not establish the dimensions of the photographed object.",
+      "note": "Strong 208-position candidate; physical count, exact topology, and the original chart remain independently unverified.",
+      "site": {
+        "url": "https://rharriszzz.github.io/beads/",
+        "detail": "Project introduction & pattern viewer · GitHub Pages"
+      },
       "image": {
         "path": "assets/images/beads.jpg",
         "alt": "A red, yellow, and black beaded rope arranged on a pink background, used as a photographic reference.",
@@ -117,7 +121,7 @@
         "public": true,
         "fork": false,
         "archived": false,
-        "lastPushed": "2026-10-21",
+        "lastPushed": "2026-11-01",
         "branch": "master"
       }
     },

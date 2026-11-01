@@ -17,7 +17,7 @@ GitHub’s archived flag or an assertion that the code is unsupported.
 | reversi | 2026-11-01 | Original; recent; interactive browser game and coach | GitHub Pages; playable, engine responds after a move | README, index, Pages workflow/settings, public app, icon, research diagrams; fresh screenshot captured |
 | arxiv-shelf | 2026-11-01 | Original; recent; local PDF library | GitHub Pages introduction; separately hosted browser edition may require permission | README, docs/index.html, public screenshot, workflow/settings; no catalog files copied |
 | recipes | 2026-11-01 | Original; new static recipe collection | GitHub Pages recipe browser and print-friendly pages; production deployment documented | README, migration report, Pages workflow, production QA; typographic placeholder (no fabricated screenshot) |
-| beads | 2026-10-21 | Original; recent geometry note in a historical photographic/render collection | None verified; Pages disabled | No README; beads.html, beads.pov, BEADS_POV_SINE_ANGLE.md, original reference photographs and rendered images |
+| beads | 2026-11-01 | Original; curated pattern, geometry and photographic research; full archive retained on its research branch | https://rharriszzz.github.io/beads/ — GitHub Pages introduction and small pattern viewer; live desktop/mobile interactions verified | New README/topical docs, pinned source provenance, actual photo/R344/R345/R346 figures, separate R347 evidence epoch, standalone graph-paper code/tests, explicit publication allowlist; historical gallery retained |
 | madweave | 2017-07-30 | Original; historical; interactive JavaScript/SVG weaving app | Documented fiberwoman.com host could not be verified; Pages disabled | README, index.html, MadWeaver.html, madweave.html, source tree, interface PNG and SVG assets |
 | navier-stokes-vortex-lab | 2026-09-27 | Original; recent visualization and boundary-control research | No published site found; Pages disabled | README, STATUS.md, source tree, preview.png and rendering evidence; finite kinematic-model limits retained |
 | navier-stokes-physical-approximation | 2026-09-10 | Original; recent numerical/physical research | No published site found; Pages disabled | README, source/config/test tree and committed baseline/reference plots; no accepted nonlinear core claimed |
@@ -63,6 +63,16 @@ Existing HIS Profile and image-mask figures were inspected but not copied into
 the secondary collection. Historical forks retain explicit fork labels.
 
 ## Verification scope
+
+The Beads entry was updated separately on 2026-11-01 after its curated site was
+published. Its production build/deploy completed successfully. Live browser checks
+covered desktop, tablet, 390px and 320px widths, both evidence epochs, strict and
+provisional masks, source lists, selection, zoom, keyboard access, image loading,
+the original gallery and JavaScript-disabled content. The candidate remains
+conditional: 201 supported / 0 conflicting / 7 insufficient, with 1040/1040
+retained-label agreement, is not independent chart/object validation. The existing
+index photograph and all other catalog entries remain unchanged. This scoped
+follow-up is not a new full review of the other repositories.
 
 The link checker verifies URLs and assets; manual app and responsive checks are
 recorded in `docs/VALIDATION.md`. A current last-push timestamp is not evidence of
