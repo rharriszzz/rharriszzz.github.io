@@ -6,10 +6,10 @@ requests, HTTPS checks, and browser inspection. No other repository was modified
 The original API snapshots and local investigation files were kept outside this
 checkout and are not part of the published artifact.
 
-The current index source describes **17 repositories**: nine featured projects,
-three listed secondary projects, four editorially unlisted historical projects,
-and this central index. All 16 other retained repositories remain documented
-here, but only 12 are currently shown on the index website. No private repository names, data, or files are included. No repository
+The current index source describes **17 repositories**: 12 projects in a single
+ordered directory, four editorially unlisted historical projects, and this
+central index. All 16 other retained repositories remain documented here,
+but only 12 are currently shown on the index website. No private repository names, data, or files are included. No repository
 was marked archived in GitHub. “Historical” below describes age and context, not
 GitHub’s archived flag or an assertion that the code is unsupported.
 
@@ -58,15 +58,15 @@ physical disc. FFT Image Explorer has a neutral text panel rather than a
 fabricated interface. Recipes likewise uses a typographic panel until a genuine
 site screenshot is available.
 
-Supporting tools have compact text entries to keep the main directory readable.
-The historical section lists only HIS Profile. Sound, z/OS Python, IzODA
+Supporting tools appear toward the end of the same card grid. The only
+listed historical repository is HIS Profile. Sound, z/OS Python, IzODA
 documentation, and the NumPy fork are intentionally unlisted,
 but retain their metadata in source control. Sound may be restored later.
 The Python IBM DB fork was deleted from GitHub by its owner and was removed
 from this source catalog; the original 2026-11-01 review is historical. The
 published projects.json contains listed entries only.
 Existing HIS Profile and image-mask figures were inspected but not copied into
-the secondary collection. Historical forks retain explicit fork labels.
+the index. Historical forks retain explicit fork labels.
 
 ## Verification scope
 
