@@ -1,0 +1,82 @@
+# Maintain project-card images
+
+Use an actual reviewed project screenshot, render, plot, or photograph. Record
+its public origin in `projects.json` and describe what the image really shows.
+For website screenshots, prefer a repeatable capture script in the source
+project's repository so future homepage changes can refresh the same asset.
+
+## Recipes: capture in the source repository
+
+Follow the Recipes repository's
+[homepage screenshot checklist](https://github.com/rharriszzz/recipes/blob/main/docs/project-card-screenshot.md).
+Its `npm run capture:homepage-card` command rebuilds the current checkout and
+captures the heading, introduction, and complete recipe list without the empty
+right side. Review and push `images/homepage-card.png` there first.
+
+The maintained catalog metadata is:
+
+```json
+"image": {
+  "url": "https://raw.githubusercontent.com/rharriszzz/recipes/main/images/homepage-card.png",
+  "alt": "Actual Recipes homepage screenshot showing the Recipes heading, introduction, and single-column list of recipe links on ivory paper.",
+  "caption": "Actual Recipes homepage screenshot · complete recipe list",
+  "source": "https://github.com/rharriszzz/recipes/blob/main/images/homepage-card.png"
+}
+```
+
+Keep this stable URL when refreshing the screenshot. If the filename and meaning
+stay the same, no index commit or redeployment is needed; the card loads the
+updated hosted PNG directly, subject to browser/CDN caching. Do not copy the
+image into `assets/images/` as well.
+
+## Validate and publish an index change
+
+If image metadata changes, update `projects.json`, the provenance notes in
+[`INVENTORY.md`](INVENTORY.md), and the relevant regression test if the reviewed
+source path changes. Record checks actually performed in
+[`VALIDATION.md`](VALIDATION.md); distinguish local preview checks from live
+verification. A focused image refresh does not require changing the catalog's
+full-inventory `verifiedOn` date.
+
+Run from the index repository root, after the source image is public:
+
+```sh
+python3 scripts/build.py
+python3 -m unittest discover -s tests -v
+python3 scripts/check_links.py
+git diff --check
+python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
+```
+
+Inspect http://127.0.0.1:8000/ at desktop and mobile widths. Confirm that the
+Recipes image loads, key content remains visible, and its caption and alt text
+are accurate. Stop the preview with Ctrl-C. Unit tests check metadata and
+rendered HTML; the link checker checks reachability. Neither replaces opening
+the card in a browser.
+
+Stage only intended changes, review them, commit, and push to `main`. Generated
+`dist/` stays uncommitted. Wait for the
+[index Actions workflow](https://github.com/rharriszzz/rharriszzz.github.io/actions)
+to finish successfully, then run:
+
+```sh
+python3 scripts/check_links.py --base-url https://rharriszzz.github.io/
+```
+
+Open [the live directory](https://rharriszzz.github.io/) and verify that the
+Recipes card displays the new PNG from its real public URL, without a placeholder
+or a local request override. If it looks stale, check the raw source PNG and
+allow browser/CDN caches to refresh. Finish with a clean `git status` and a brief
+record of commits, check results, and the live URL.
+
+## Other project images
+
+For hosted PNG/JPG/WebP images, the existing validator allows `image.url` only
+under the owning project's `raw.githubusercontent.com` branch and `images/`
+directory. Use its GitHub file page for `image.source` and meaningful alt text
+and a factual caption. Choose exactly one of `image.url` and `image.path`.
+
+For local reviewed assets, use `image.path` under `assets/images/`; only
+referenced images are copied into the build. Keep provenance and any capture
+instructions with the source project, and link them here when introducing a new
+repeatable capture workflow.

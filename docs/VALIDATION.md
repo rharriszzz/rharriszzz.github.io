@@ -167,10 +167,16 @@ no build or validation-rule changes were needed.
   issue is outside this card-image update. Desktop and mobile card screenshots
   were visually reviewed. No page JavaScript exceptions occurred.
 
-These are local pre-publication checks. The browser review fulfilled only the
-new raw image URL with the exact local PNG, since it is not yet pushed. Push the
-Recipes commit before publishing the index commit so its raw image and provenance
-URLs resolve. Live link checking and deployment verification remain pending
-publication; no production update is claimed here. Recipes now documents
-`npm run capture:homepage-card` and requires refreshing the PNG after homepage
-list or layout changes.
+The initial browser review above was local: it fulfilled the then-unpublished raw
+image URL with the exact local PNG. Recipes commit `920b118` was subsequently
+pushed before index commit `e0896ca`, and both deployments succeeded:
+[Recipes workflow](https://github.com/rharriszzz/recipes/actions/runs/41372409076)
+and [index workflow](https://github.com/rharriszzz/rharriszzz.github.io/actions/runs/41372442962).
+The public raw PNG matched the reviewed SHA-256 hash, and all 30 external URLs
+passed `python3 scripts/check_links.py`. Chromium then opened the live directory
+and decoded the actual public 1056 × 1300 PNG in the Recipes card, without a
+placeholder or request override.
+
+For future refreshes, use the [project-image workflow](PROJECT_IMAGES.md) and the
+Recipes repository's linked capture checklist. Refresh the source PNG after
+homepage list/layout changes and publish it before any dependent index change.

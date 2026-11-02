@@ -75,6 +75,11 @@ empty right side. Regenerate it in the Recipes repository using its documented
 Hosted image URLs are restricted to images under the owning project’s GitHub
 raw-content path. These images are not copied into the Pages artifact.
 
+Follow the [project-image workflow](docs/PROJECT_IMAGES.md) for future screenshot
+refreshes, including the Recipes capture instructions, review checks, source-first
+push order, and live-site verification. Refreshing the same hosted PNG usually
+needs only a commit in its source repository.
+
 ## Build, test, and preview
 
 Requires Python 3.10+. No third-party Python packages, npm installation,
