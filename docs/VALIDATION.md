@@ -135,3 +135,42 @@ The page remains server-rendered static HTML; unlisted historical projects remai
 excluded. The test suite now checks the single grid and absence of the removed UI.
 The original browser-review notes above are a historical record of the earlier
 layout, not a claim that filtering still exists.
+
+## Recipes homepage screenshot — 2026-11-01
+
+The Recipes placeholder is replaced with the reviewed actual homepage screenshot
+from its own repository's `images/homepage-card.png`. The catalog uses the raw
+GitHub URL for `image.url`, the corresponding GitHub file page for `image.source`,
+and alt text and a caption explicitly describing a homepage screenshot.
+The existing hosted-image validation accepts this owning-repository path;
+no build or validation-rule changes were needed.
+
+- In Recipes, `npm ci`, the Python build/content validation, the Node interaction
+  tests, the capture script syntax check, and `git diff --check` passed.
+- Playwright captured the current local homepage: heading, introduction, and all
+  16 recipe links. Text bounds within `main.simple-index`, plus a 16-pixel inset,
+  exclude the empty right side. The PNG is **1056 × 1300** pixels (2× density).
+- Two successive captures produced identical SHA-256 hashes:
+  `41fb08cb51562ffbdc75c300596ddc4c58599694c34baefaf9520a7e9ca9e32b`.
+- An isolated temporary fixture with 40 recipes and longer wrapping titles
+  captured successfully at **1702 × 4222** pixels. The script expanded its
+  capture viewport past the initial desktop height and retained the full list.
+  Fixture data is not part of either repository.
+- In the index, `python3 scripts/build.py`, all **12** Python tests, and
+  `git diff --check` passed. The build contains 12 listed projects and 12 public
+  files; the hosted image is not copied into the deployment artifact. The new
+  regression test verifies the reviewed URL/source, screenshot alt text,
+  rendered image in place of a placeholder, and published catalog metadata.
+- Chromium decoded and displayed the exact PNG in the Recipes card at 1280,
+  768, 390, and 320 CSS pixels. The card fits each width. The existing introduction
+  extends about 3 pixels beyond the viewport at 320 pixels; that separate layout
+  issue is outside this card-image update. Desktop and mobile card screenshots
+  were visually reviewed. No page JavaScript exceptions occurred.
+
+These are local pre-publication checks. The browser review fulfilled only the
+new raw image URL with the exact local PNG, since it is not yet pushed. Push the
+Recipes commit before publishing the index commit so its raw image and provenance
+URLs resolve. Live link checking and deployment verification remain pending
+publication; no production update is claimed here. Recipes now documents
+`npm run capture:homepage-card` and requires refreshing the PNG after homepage
+list or layout changes.

@@ -66,10 +66,14 @@ not reuse an input photograph as if it were a screenshot.
 
 Removing an image from an entry also removes it from the next published build.
 Only referenced local images are copied. SVGs must be self-contained static drawings.
-The HIS Profile card instead displays `images/Tree.jpg` from its original public
-GitHub repository via `image.url`, with an explicit source link and caption.
+The HIS Profile and Recipes cards instead display images from their original
+public GitHub repositories via `image.url`, with explicit source links and captions.
+Recipes uses the reviewed `images/homepage-card.png`, an actual homepage screenshot
+of the heading, introduction, and complete recipe list, cropped to exclude the
+empty right side. Regenerate it in the Recipes repository using its documented
+`npm run capture:homepage-card` command when that homepage changes.
 Hosted image URLs are restricted to images under the owning project’s GitHub
-raw-content path. This image is not copied into the Pages artifact.
+raw-content path. These images are not copied into the Pages artifact.
 
 ## Build, test, and preview
 

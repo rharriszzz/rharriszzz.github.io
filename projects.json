@@ -141,8 +141,12 @@
         "url": "https://rharriszzz.github.io/recipes/",
         "detail": "Browse and print recipes · GitHub Pages"
       },
-      "placeholder": "Recipes & cooking notes",
-      "placeholderDetail": "Public recipe collection · browse online",
+      "image": {
+        "url": "https://raw.githubusercontent.com/rharriszzz/recipes/main/images/homepage-card.png",
+        "alt": "Actual Recipes homepage screenshot showing the Recipes heading, introduction, and single-column list of recipe links on ivory paper.",
+        "caption": "Actual Recipes homepage screenshot · complete recipe list",
+        "source": "https://github.com/rharriszzz/recipes/blob/main/images/homepage-card.png"
+      },
       "repository": {
         "url": "https://github.com/rharriszzz/recipes",
         "public": true,

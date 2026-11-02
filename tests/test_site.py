@@ -78,6 +78,21 @@ class SiteTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build.validate(data)
 
+    def test_recipes_displays_reviewed_homepage_screenshot(self):
+        recipes = next(p for p in self.data["projects"] if p["slug"] == "recipes")
+        image = recipes["image"]
+        self.assertEqual(image["url"], "https://raw.githubusercontent.com/rharriszzz/recipes/main/images/homepage-card.png")
+        self.assertEqual(image["source"], "https://github.com/rharriszzz/recipes/blob/main/images/homepage-card.png")
+        card = build.render_card(recipes)
+        images = [attrs for tag, attrs in Document(card).elements if tag == "img"]
+        self.assertEqual(len(images), 1)
+        self.assertEqual(images[0]["src"], image["url"])
+        self.assertIn("homepage screenshot", images[0]["alt"])
+        self.assertIn(image["caption"], card)
+        self.assertNotIn("image-placeholder", card)
+        published = json.loads((ROOT / "dist/projects.json").read_text())
+        self.assertEqual(next(p for p in published["projects"] if p["slug"] == "recipes")["image"], image)
+
     def test_listed_flag_must_be_boolean(self):
         data = copy.deepcopy(self.data)
         data["projects"][0]["listed"] = "false"
