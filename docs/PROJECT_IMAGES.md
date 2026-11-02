@@ -62,6 +62,28 @@ assignments and crop correspondence truthful. Commit and push the source PNG
 there before relying on it in the index. The index embeds the stable hosted
 image without making an additional copy.
 
+## HSV Tools: regenerate the reviewed picker illustration
+
+The [reviewed red-bead HSV selection figure](https://github.com/rharriszzz/hsv_tools/blob/main/docs/figures/hsv-tools-card.png)
+pairs the real necklace photograph and its actual HSV Picker line-selection
+mask. It is a computed composite, not a literal screenshot of the OpenCV
+window and not a finished bead-color reconstruction.
+
+The HSV Tools repository maintains `docs/figures/hsv-tools-card.png` and
+its `docs/figures/hsv-tools-card-preview.png`. To regenerate, install
+`requirements-figures.txt` in a suitable environment, then run:
+
+```sh
+python scripts/generate_hsv_figures.py
+python -m unittest discover -s tests -v
+```
+
+See the [full figure notes](https://github.com/rharriszzz/hsv_tools/blob/main/docs/figures.md)
+for exact sampled coordinates, HSV tolerances and scientific provenance.
+Review the 1600 × 1000 original and the 400 × 250 preview before
+publishing. The directory embeds the stable hosted PNG from the
+source repository without copying it.
+
 ## Validate and publish an index change
 
 If image metadata changes, update `projects.json`, the provenance notes in

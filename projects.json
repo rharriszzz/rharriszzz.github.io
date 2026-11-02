@@ -305,8 +305,14 @@
         "public": true,
         "fork": false,
         "archived": false,
-        "lastPushed": "2025-04-26",
+        "lastPushed": "2026-11-02",
         "branch": "main"
+      },
+      "image": {
+        "url": "https://raw.githubusercontent.com/rharriszzz/hsv_tools/main/docs/figures/hsv-tools-card.png",
+        "alt": "Original close-up photograph of the red, yellow, and black bead necklace, with a short cyan HSV sampling line marked on a red bead, alongside the matching black-on-white pixel selection.",
+        "caption": "Actual HSV line selection · matching pixels shown in black",
+        "source": "https://github.com/rharriszzz/hsv_tools/blob/main/docs/figures/hsv-tools-card.png"
       }
     },
     {

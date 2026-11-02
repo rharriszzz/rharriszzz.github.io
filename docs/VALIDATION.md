@@ -212,3 +212,20 @@ descriptive alt text and a caption. The source image remains in Bead Map and
 is not copied into the index deployment. A focused regression test checks
 the source, published catalog and rendered HTML; unrelated projects and
 the central directory layout are unchanged.
+
+## HSV Tools card — 2026-11-01 (America/New_York)
+
+The reviewed HSV Picker red-sample composite (`hsv-tools-card.png`,
+1600 × 1000) was merged into `hsv_tools/main` at `0ddf5a9` in
+[HSV Tools PR #1](https://github.com/rharriszzz/hsv_tools/pull/1).
+The source main-branch image identity was independently checked before
+the central index metadata change.
+
+The central index now references the original
+`docs/figures/hsv-tools-card.png` and supplies a factual alt description
+and caption distinguishing the actual computed HSV selection from a
+literal application screenshot. The source repo maintains its generator,
+README and numerical validation. No source PNG is copied into the index
+deployment. The focused regression test checks the exact hosted URL,
+source URL and rendered image card. Other cards remain unchanged.
+

@@ -25,7 +25,7 @@ GitHub’s archived flag or an assertion that the code is unsupported.
 | symphonium-disc-maker | 2026-10-02 | Original; recent geometry/fabrication experiment | No published site found; Pages disabled | README, source/test tree, pyproject, reference figures, prototype SVG; pending physical fit retained |
 | fft-image-explorer | 2026-11-02 | Original; interactive local Python image analysis | No published site found; Pages disabled | README, Gaussian FFT figure generator and numerical tests, original necklace and saved centerline; reviewed Candidate 5 scientific figure (not an app screenshot) |
 | bead_map | 2026-11-02 | Original; bead-detection and photographic-mask experiments | No published site found; Pages disabled | README, Python image-analysis scripts, original mask images and reproducible two-panel illustration in docs/figures |
-| hsv_tools | 2025-04-26 | Original; image-analysis utilities | No published site found; Pages disabled | No README; hsv_picker.py, hsv_counts.py, requirements and masks |
+| hsv_tools | 2026-11-02 | Original; interactive HSV selection and pixel-count utilities | No published site found; Pages disabled | README, actual HSV Picker mask illustration, histogram figure, reproducible generator, tests, original photo and masks |
 | sound | 2017-07-30 | Original; historical Fourier/audio experiments | No published site found; Pages disabled | No README; test.c, fft.c, harmonics.c and plotting scripts |
 | HIS_profile | 2020-06-22 | Original repository; historical Rocket Software / z/OS tooling | No published site found; Pages disabled | README, C/Python package, notebook tree, and published `images/Tree.jpg` Bokeh radial profiling example; no ownership claim over employer code |
 | zos_python | 2020-09-21 | Original repository; historical z/OS tooling | No published site found; Pages disabled | No README; setup.py, package initialization, system-service source/test tree |
@@ -106,6 +106,23 @@ The Bead Map repository owns the source 1200 × 660 PNG, its
 [README instructions](https://github.com/rharriszzz/bead_map/blob/main/README.md).
 The central index embeds its main-branch image URL rather than copying it into
 the deployment artifact.
+
+### HSV Tools — 2026-11-01 card illustration
+
+The [two-panel HSV Picker figure](https://github.com/rharriszzz/hsv_tools/blob/main/docs/figures/hsv-tools-card.png)
+shows a crop of the original necklace photograph with a real sampling line
+on a red bead, alongside the actual black-on-white HSV match mask generated
+from that line. This is a computed composition based on the tool's algorithm,
+not a screenshot of the running interactive window or a completed bead map.
+
+The HSV Tools repository owns the 1600 × 1000 figure, its 400 × 250 preview,
+the independent color-count histogram, mask outputs and a reproducible
+[generator](https://github.com/rharriszzz/hsv_tools/blob/main/scripts/generate_hsv_figures.py).
+Its [README](https://github.com/rharriszzz/hsv_tools/blob/main/README.md) and
+[figure notes](https://github.com/rharriszzz/hsv_tools/blob/main/docs/figures.md)
+record the source photograph, exact sample coordinates, tolerance settings and
+checks. The central directory references the source image rather than
+duplicating it.
 
 ## Verification scope
 
