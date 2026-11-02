@@ -243,3 +243,23 @@ scientific validity or authorize new computations.
 The test suite now checks that the set of unlisted projects includes
 Vortex Lab and specifically prevents its HTML card from being published,
 while keeping the other Navier–Stokes entry visible.
+
+## Physical Approximation editorial visibility — 2026-11-01 (America/New_York)
+
+After hiding Vortex Lab, the owner also requested that the
+`navier-stokes-physical-approximation` project be removed from the
+central index. It is now `"listed": false` in `projects.json`, leaving
+10 public index cards. Both research repositories remain public and
+unchanged, with all numerical results, negative findings, notes and
+figures intact.
+
+The source research depends on substantial mathematical scale separation,
+and no accepted nonlinear core or verified physical realization is
+established. The user would like to understand physical questions such as
+Reynolds number, vortex size and viscosity before pursuing the research.
+This index adjustment neither asserts numerical invalidity nor initiates
+further scientific investigation.
+
+The existing no-leakage regression test now excludes both Navier–Stokes
+cards from the generated page and published project catalog. Other
+projects, ordering, images, and page layout are unchanged.
