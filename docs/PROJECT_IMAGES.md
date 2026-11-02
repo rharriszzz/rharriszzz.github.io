@@ -29,6 +29,19 @@ stay the same, no index commit or redeployment is needed; the card loads the
 updated hosted PNG directly, subject to browser/CDN caching. Do not copy the
 image into `assets/images/` as well.
 
+## FFT Image Explorer: regenerate the computed illustration
+
+The [approved two-panel figure](https://github.com/rharriszzz/fft-image-explorer/blob/main/docs/figures/local-fft-card.png)
+is generated from the original bead photograph, saved centerline, Gaussian
+spatial window, and calculated FFT. It is **not** a screenshot of the app.
+The source repository owns `docs/figures/local-fft-card.png`.
+
+Follow its [reproducibility documentation](https://github.com/rharriszzz/fft-image-explorer/blob/main/docs/fft-figures.md)
+and run `python3 scripts/generate_fft_figures.py` in that repository.
+Review both the full 1600 × 1000 illustration and its 400 × 250
+`local-fft-card-preview.png` before publishing changes. The index uses the
+stable main-branch raw PNG and never copies or regenerates it.
+
 ## Validate and publish an index change
 
 If image metadata changes, update `projects.json`, the provenance notes in
@@ -49,8 +62,8 @@ python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
 Inspect http://127.0.0.1:8000/ at desktop and mobile widths. Confirm that the
-Recipes image loads, key content remains visible, and its caption and alt text
-are accurate. Stop the preview with Ctrl-C. Unit tests check metadata and
+updated project image loads, key content remains visible, and its caption and alt
+text are accurate. Stop the preview with Ctrl-C. Unit tests check metadata and
 rendered HTML; the link checker checks reachability. Neither replaces opening
 the card in a browser.
 
@@ -64,16 +77,16 @@ python3 scripts/check_links.py --base-url https://rharriszzz.github.io/
 ```
 
 Open [the live directory](https://rharriszzz.github.io/) and verify that the
-Recipes card displays the new PNG from its real public URL, without a placeholder
-or a local request override. If it looks stale, check the raw source PNG and
+updated card displays the intended PNG from its real public URL, without a
+placeholder or local request override. If it looks stale, check the raw source PNG and
 allow browser/CDN caches to refresh. Finish with a clean `git status` and a brief
 record of commits, check results, and the live URL.
 
 ## Other project images
 
-For hosted PNG/JPG/WebP images, the existing validator allows `image.url` only
-under the owning project's `raw.githubusercontent.com` branch and `images/`
-directory. Use its GitHub file page for `image.source` and meaningful alt text
+For hosted PNG/JPG/WebP images, the validator allows `image.url` only
+under the owning project's `raw.githubusercontent.com` branch, in its
+`images/` or `docs/figures/` directory. Use its GitHub file page for `image.source` and meaningful alt text
 and a factual caption. Choose exactly one of `image.url` and `image.path`.
 
 For local reviewed assets, use `image.path` under `assets/images/`; only
