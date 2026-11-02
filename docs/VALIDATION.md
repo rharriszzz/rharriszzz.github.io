@@ -180,3 +180,20 @@ placeholder or request override.
 For future refreshes, use the [project-image workflow](PROJECT_IMAGES.md) and the
 Recipes repository's linked capture checklist. Refresh the source PNG after
 homepage list/layout changes and publish it before any dependent index change.
+
+## FFT Image Explorer illustration — 2026-11-01 (America/New_York)
+
+The approved Candidate 5 card was merged into `fft-image-explorer/main`
+at `ff513e6` before this index update. Source:
+`docs/figures/local-fft-card.png` (1600 × 1000).
+It is a computed composite from the original necklace photograph and its
+Gaussian-windowed FFT, not an application screenshot.
+
+The index references that specific owning-repository raw PNG, replaces the
+neutral placeholder, and allows `docs/figures/` as a hosted-image directory
+alongside `images/`. Regression checks verify the exact source URL, caption,
+alt text, card rendering, and rejection of unapproved hosts or paths.
+The source PNG and its generator remain in the FFT repository and are not
+copied to index deployment artifacts.
+
+This is a scoped figure integration, not a new repository-inventory review.
