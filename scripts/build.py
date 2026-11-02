@@ -65,18 +65,18 @@ def validate(data, root=ROOT):
                 prefix = f"/rharriszzz/{slug}/{repo['branch']}/images/"
                 if (parts.netloc != "raw.githubusercontent.com"
                         or parts.query or parts.fragment
-                        or not re.fullmatch(re.escape(prefix) + r"[A-Za-z0-9_.-]+\\.(jpg|png|webp)", parts.path)):
+                        or not re.fullmatch(re.escape(prefix) + r"[A-Za-z0-9_.-]+\.(jpg|png|webp)", parts.path)):
                     raise ValueError(f"Unexpected hosted project image: {slug}")
             else:
                 path = Path(image["path"])
-                if not re.fullmatch(r"assets/images/[a-z0-9-]+\\.(png|jpg|svg|webp)", path.as_posix()):
+                if not re.fullmatch(r"assets/images/[a-z0-9-]+\.(png|jpg|svg|webp)", path.as_posix()):
                     raise ValueError(f"Unexpected image path: {path}")
                 candidate = root / path
                 if not candidate.is_file() or candidate.is_symlink() or not candidate.resolve().is_relative_to(root.resolve()):
                     raise ValueError(f"Missing or unsafe image: {path}")
                 if path.suffix == ".svg":
                     svg = candidate.read_text()
-                    if re.search(r"<script|<foreignObject|\\bon\\w+\\s*=|(?:href|src)\\s*=\\s*['\\\"](?:https?:|//|data:|javascript:)", svg, re.I):
+                    if re.search(r"<script|<foreignObject|\bon\w+\s*=|(?:href|src)\s*=\s*['\\\"](?:https?:|//|data:|javascript:)", svg, re.I):
                         raise ValueError(f"SVG must be a self-contained static image: {path}")
 
 
