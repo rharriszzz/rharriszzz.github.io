@@ -42,7 +42,8 @@ def validate(data, root=ROOT):
         for key in ("title", "description", "technology", "kind"):
             if not isinstance(project[key], str) or not project[key].strip():
                 raise ValueError(f"Missing {key}: {slug}")
-        if type(project["featured"]) is not bool or type(project["browserApp"]) is not bool:
+        if (type(project["featured"]) is not bool or type(project["browserApp"]) is not bool
+                or type(project.get("listed", True)) is not bool):
             raise ValueError(f"Expected boolean flags: {slug}")
         if "site" in project:
             validate_url(project["site"]["url"])
@@ -94,7 +95,7 @@ def render_card(project):
 
 
 def render(data):
-    projects = data["projects"]
+    projects = [p for p in data["projects"] if p.get("listed", True)]
     date = datetime.date.fromisoformat(data["verifiedOn"])
     replacements = {
         "PROJECT_COUNT": str(len(projects)),
@@ -115,6 +116,7 @@ def render(data):
 def build():
     data = json.loads((ROOT / "projects.json").read_text())
     validate(data)
+    listed_projects = [p for p in data["projects"] if p.get("listed", True)]
     output = ROOT / "dist"
     if output.is_symlink():
         raise ValueError("Refusing to replace a symlinked output directory")
@@ -122,8 +124,10 @@ def build():
         shutil.rmtree(output)
     output.mkdir()
     (output / "index.html").write_text(render(data))
-    files = set(STATIC_FILES) | {"projects.json"}
-    files |= {p["image"]["path"] for p in data["projects"] if "image" in p}
+    # Keep editorially unlisted entries in source control, not in the published catalog.
+    (output / "projects.json").write_text(json.dumps({**data, "projects": listed_projects}, ensure_ascii=False, indent=2) + "\n")
+    files = set(STATIC_FILES)
+    files |= {p["image"]["path"] for p in listed_projects if "image" in p}
     for name in sorted(files):
         source = ROOT / name
         if source.is_symlink() or not source.resolve().is_relative_to(ROOT):
@@ -132,7 +136,7 @@ def build():
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(source, dest)
     (output / ".nojekyll").touch()
-    print(f"Built {len(data['projects'])} projects and {len(files) + 2} public files in dist/")
+    print(f"Built {len(listed_projects)} projects and {len(files) + 3} public files in dist/")
 
 
 if __name__ == "__main__":

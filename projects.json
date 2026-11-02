@@ -309,6 +309,7 @@
       "slug": "sound",
       "title": "Sound",
       "featured": false,
+      "listed": false,
       "categories": [
         "research",
         "tools"
@@ -350,6 +351,7 @@
       "slug": "zos_python",
       "title": "z/OS Python",
       "featured": false,
+      "listed": false,
       "categories": [
         "tools"
       ],
@@ -370,6 +372,7 @@
       "slug": "izODA.github.io",
       "title": "IzODA documentation",
       "featured": false,
+      "listed": false,
       "categories": [
         "tools"
       ],
@@ -390,6 +393,7 @@
       "slug": "numpy",
       "title": "NumPy fork",
       "featured": false,
+      "listed": false,
       "categories": [
         "tools",
         "research"
@@ -411,6 +415,7 @@
       "slug": "python-ibmdb",
       "title": "Python IBM DB fork",
       "featured": false,
+      "listed": false,
       "categories": [
         "tools"
       ],

@@ -34,8 +34,26 @@ class SiteTests(unittest.TestCase):
 
     def test_all_reviewed_projects_are_in_static_html(self):
         cards = [a["data-project"] for _, a in self.doc.elements if "data-project" in a]
-        self.assertEqual(cards, [p["slug"] for p in self.data["projects"]])
+        self.assertEqual(cards, [p["slug"] for p in self.data["projects"] if p.get("listed", True)])
         self.assertNotIn("{{", self.page)
+
+    def test_unlisted_projects_do_not_leak_into_published_site_or_catalog(self):
+        unlisted = {p["slug"] for p in self.data["projects"] if not p.get("listed", True)}
+        self.assertEqual(unlisted, {"sound", "zos_python", "izODA.github.io", "numpy", "python-ibmdb"})
+        published = json.loads((ROOT / "dist/projects.json").read_text())
+        self.assertEqual(
+            [p["slug"] for p in published["projects"]],
+            [p["slug"] for p in self.data["projects"] if p.get("listed", True)],
+        )
+        for slug in unlisted:
+            self.assertNotIn(f'data-project="{slug}"', self.page)
+        self.assertIn('data-project="HIS_profile"', self.page)
+
+    def test_listed_flag_must_be_boolean(self):
+        data = copy.deepcopy(self.data)
+        data["projects"][0]["listed"] = "false"
+        with self.assertRaises(ValueError):
+            build.validate(data)
 
     def test_private_duplicate_or_unsafe_entries_are_rejected(self):
         for mutation in ("private", "duplicate", "image", "url"):
@@ -82,7 +100,7 @@ class SiteTests(unittest.TestCase):
 
     def test_publication_contains_only_allowlisted_files(self):
         expected = set(build.STATIC_FILES) | {"index.html", ".nojekyll", "projects.json"}
-        expected |= {p["image"]["path"] for p in self.data["projects"] if "image" in p}
+        expected |= {p["image"]["path"] for p in self.data["projects"] if p.get("listed", True) and "image" in p}
         actual = {p.relative_to(ROOT / "dist").as_posix() for p in (ROOT / "dist").rglob("*") if p.is_file()}
         self.assertEqual(actual, expected)
         self.assertFalse(any(p.is_symlink() for p in (ROOT / "dist").rglob("*")))
