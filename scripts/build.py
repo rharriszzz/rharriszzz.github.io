@@ -68,9 +68,7 @@ def validate(data, root=ROOT):
 
 def render_card(project):
     p = project
-    search = " ".join([p["slug"], p["title"], p["kind"], p["description"], p["technology"], p.get("note", ""), *p["categories"]])
-    attrs = (f'data-project="{escape(p["slug"])}" data-categories="{escape(" ".join(p["categories"]))}" '
-             f'data-browser="{str(p["browserApp"]).lower()}" data-search="{escape(search)}"')
+    attrs = f'data-project="{escape(p["slug"])}"'
     kind = f'<p class="card-kind{" browser" if p["browserApp"] else ""}">{escape(p["kind"])}</p>'
     repo = (f'<a href="{escape(p["repository"]["url"])}" aria-label="{escape(p["title"])} — GitHub Repository">'
             'GitHub Repository <span aria-hidden="true">↗</span></a>')
