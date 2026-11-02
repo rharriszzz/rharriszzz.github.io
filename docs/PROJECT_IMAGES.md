@@ -13,6 +13,11 @@ Its `npm run capture:homepage-card` command rebuilds the current checkout and
 captures the heading, introduction, and complete recipe list without the empty
 right side. Review and push `images/homepage-card.png` there first.
 
+For the central index's ivory-colored letterbox around this portrait image,
+see [Recipes card background continuation](RECIPES_CARD_BACKGROUND.md).
+The extra card area is filled with the real page's `#fffff0` paper color;
+the source screenshot is not replaced or artificially regenerated.
+
 The maintained catalog metadata is:
 
 ```json
