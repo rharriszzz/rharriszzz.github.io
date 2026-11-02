@@ -14,14 +14,13 @@ or arXiv Shelf deployments.
 ## Edit the collection
 
 `projects.json` is the single source for project metadata. `index.template.html`
-contains the page structure; `style.css` and `app.js` control appearance and
-optional filtering. `scripts/build.py` renders a complete static page into
-`dist/`, including all listed project links. Visitors do not need JavaScript or access
-to GitHub’s API to read the directory.
+contains the page structure; `style.css` controls appearance. `scripts/build.py` renders a complete static page into
+`dist/`, including all listed project links. The directory has one ordered project grid,
+without JavaScript, search, or category filters. It does not call GitHub’s API at runtime.
 
 To change a description, edit its `description`, `kind`, `technology`, and
-optional `note` fields. Keep scientific limitations explicit. Use `featured:
-true` for a large illustrated card, or `false` for the secondary collection.
+optional `note` fields. Keep scientific limitations explicit. All listed projects use the same card layout; the order of entries in `projects.json`
+determines display order. Put the most interesting projects first.
 
 Set `listed: false` on an entry to exclude it from the website, search, counts,
 public JSON catalog, and deployed assets without deleting its source metadata.
@@ -70,23 +69,20 @@ Only referenced images are copied. SVGs must be self-contained static drawings.
 
 ## Build, test, and preview
 
-Requires Python 3.10+ and Node 20+ for the JavaScript syntax check. No Python
-packages, npm installation, framework, or package lockfile are needed.
+Requires Python 3.10+. No third-party Python packages, npm installation,
+framework, or package lockfile are needed.
 
 ```sh
 python3 scripts/build.py
 python3 -m unittest discover -s tests -v
-node --check app.js
 python3 scripts/check_links.py
 python3 -m http.server 8000 --bind 127.0.0.1 --directory dist
 ```
 
 Open http://127.0.0.1:8000/ and check the desktop layout, a tablet width, and an
-iPhone width (including 320 CSS pixels). Exercise search, category buttons,
-combined filters, empty results, reset, and keyboard focus. Test with JavaScript
-disabled to confirm the complete directory remains available. Filter state is
-shareable in `?category=research&q=Python` URL parameters. No analytics, third-party
-fonts, tracking scripts, cookies, or API requests are used by this site.
+iPhone width (including 320 CSS pixels). Check the card order, images, links,
+and keyboard focus. No JavaScript, analytics, third-party fonts, tracking scripts,
+cookies, or runtime API requests are used by this site.
 
 The standard-library tests check catalog coverage, escaping, private-entry
 rejection, image/anchor paths, basic accessibility markup, and the exact set of
