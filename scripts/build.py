@@ -10,7 +10,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CATEGORIES = {"games", "tools", "research", "visualization", "craft"}
-STATIC_FILES = ("style.css", "app.js", "assets/favicon.svg")
+STATIC_FILES = ("style.css", "assets/favicon.svg")
 
 
 def escape(value):
@@ -42,7 +42,7 @@ def validate(data, root=ROOT):
         for key in ("title", "description", "technology", "kind"):
             if not isinstance(project[key], str) or not project[key].strip():
                 raise ValueError(f"Missing {key}: {slug}")
-        if (type(project["featured"]) is not bool or type(project["browserApp"]) is not bool
+        if (type(project["browserApp"]) is not bool
                 or type(project.get("listed", True)) is not bool):
             raise ValueError(f"Expected boolean flags: {slug}")
         if "site" in project:
@@ -76,8 +76,6 @@ def render_card(project):
             'GitHub Repository <span aria-hidden="true">↗</span></a>')
     title = f'<h4>{escape(p["title"])}</h4>'
     description = f'<p class="card-description">{escape(p["description"])}</p>'
-    if not p["featured"]:
-        return f'<article class="secondary-card" {attrs}>{kind}{title}{description}{repo}</article>'
     if "image" in p:
         im = p["image"]
         media = (f'<figure><img class="project-image" src="{escape(im["path"])}" alt="{escape(im["alt"])}" '
@@ -99,9 +97,7 @@ def render(data):
     date = datetime.date.fromisoformat(data["verifiedOn"])
     replacements = {
         "PROJECT_COUNT": str(len(projects)),
-        "FEATURED_COUNT": str(sum(p["featured"] for p in projects)),
-        "FEATURED_PROJECTS": "\n".join(render_card(p) for p in projects if p["featured"]),
-        "OTHER_PROJECTS": "\n".join(render_card(p) for p in projects if not p["featured"]),
+        "PROJECTS": "\n".join(render_card(p) for p in projects),
         "VERIFIED_ON": date.isoformat(),
         "VERIFIED_LABEL": f"{date.strftime('%B')} {date.day}, {date.year}",
     }
