@@ -93,14 +93,19 @@ def render_card(project):
             'GitHub Repository <span aria-hidden="true">↗</span></a>')
     title = f'<h3>{escape(p["title"])}</h3>'
     description = f'<p class="card-description">{escape(p["description"])}</p>'
+    # A card picture is a shortcut to the live site, or to source when no site exists.
+    destination = p["site"]["url"] if "site" in p else p["repository"]["url"]
+    destination_type = "Live Site" if "site" in p else "GitHub Repository"
+    media_link = (f'<a class="project-media-link" href="{escape(destination)}" '
+                  f'aria-label="{escape(p["title"])} — {destination_type}">')
     if "image" in p:
         im = p["image"]
-        media = (f'<figure><img class="project-image" src="{escape(im.get("path", im.get("url")))}" alt="{escape(im["alt"])}" '
-                 f'width="800" height="500" loading="lazy" decoding="async">'
+        media = (f'<figure>{media_link}<img class="project-image" src="{escape(im.get("path", im.get("url")))}" alt="{escape(im["alt"])}" '
+                 f'width="800" height="500" loading="lazy" decoding="async"></a>'
                  f'<figcaption>{escape(im["caption"])}</figcaption></figure>')
     else:
-        media = (f'<div class="image-placeholder" aria-label="No project image available">'
-                 f'<span>{escape(p.get("placeholder", p["title"]))}</span><small>{escape(p.get("placeholderDetail", "Repository and source code"))}</small></div>')
+        media = (f'{media_link}<div class="image-placeholder" aria-label="No project image available">'
+                 f'<span>{escape(p.get("placeholder", p["title"]))}</span><small>{escape(p.get("placeholderDetail", "Repository and source code"))}</small></div></a>')
     note = f'<p class="card-note">{escape(p["note"])}</p>' if p.get("note") else ""
     live = (f'<a class="live-link" href="{escape(p["site"]["url"])}" aria-label="{escape(p["title"])} — Live Site">'
             'Live Site <span aria-hidden="true">↗</span></a>') if "site" in p else ""
