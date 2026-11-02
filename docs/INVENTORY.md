@@ -6,9 +6,10 @@ requests, HTTPS checks, and browser inspection. No other repository was modified
 The original API snapshots and local investigation files were kept outside this
 checkout and are not part of the published artifact.
 
-The inventory contains **18 public repositories**: nine selected projects,
-eight secondary projects, and this central index. All 17 other public repositories
-are included. No private repository names, data, or files are included. No repository
+The inventory contains **18 public repositories**: nine featured projects,
+three listed secondary projects, five editorially unlisted historical projects,
+and this central index. All 17 other public repositories remain documented
+here, but only 12 are currently shown on the index website. No private repository names, data, or files are included. No repository
 was marked archived in GitHub. “Historical” below describes age and context, not
 GitHub’s archived flag or an assertion that the code is unsupported.
 
@@ -59,6 +60,10 @@ fabricated interface. Recipes likewise uses a typographic panel until a genuine
 site screenshot is available.
 
 Supporting tools have compact text entries to keep the main directory readable.
+The historical section lists only HIS Profile. Sound, z/OS Python, IzODA
+documentation, and the NumPy and Python IBM DB forks are intentionally unlisted,
+but retain their metadata in source control. Sound may be restored later. The
+published projects.json contains listed entries only.
 Existing HIS Profile and image-mask figures were inspected but not copied into
 the secondary collection. Historical forks retain explicit fork labels.
 
