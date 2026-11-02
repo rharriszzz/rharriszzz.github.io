@@ -48,6 +48,7 @@ class SiteTests(unittest.TestCase):
         self.assertNotIn('class="secondary-card"', self.page)
         self.assertEqual(sum(1 for tag, attrs in self.doc.elements
                              if tag == "article" and attrs.get("class") == "project-card"), len(listed))
+        self.assertEqual(sum(1 for tag, attrs in self.doc.elements if tag == "h3"), len(listed))
         self.assertEqual(listed[0]["slug"], "reversi")
         self.assertEqual(listed[-1]["slug"], "HIS_profile")
 
