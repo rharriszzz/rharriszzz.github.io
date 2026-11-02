@@ -45,6 +45,9 @@ h2 { font-size: 38px; }
 .project-media-link:focus-visible { outline-offset: -4px; }
 .project-image { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; }
 .project-card:first-child .project-image { object-fit: cover; object-position: top; }
+/* The Recipes screenshot uses ivory paper; fill its letterbox with that same paper. */
+.project-card[data-project="recipes"] figure,
+.project-card[data-project="recipes"] .project-image { background: #fffff0; }
 figcaption { padding: 8px 15px; font-size: 10px; line-height: 1.4; color: var(--muted); border-top: 1px solid #e8ede6; }
 .image-placeholder { aspect-ratio: 16 / 10; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: #eff2ed; color: #4d6460; border-bottom: 1px solid var(--line); }
 .image-placeholder span { font-family: Georgia, serif; font-size: clamp(20px, 2.2vw, 28px); }
