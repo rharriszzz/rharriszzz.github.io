@@ -5,7 +5,6 @@
     {
       "slug": "reversi",
       "title": "Reversi",
-      "featured": true,
       "categories": [
         "games",
         "tools"
@@ -35,68 +34,8 @@
       }
     },
     {
-      "slug": "arxiv-shelf",
-      "title": "arXiv Shelf",
-      "featured": true,
-      "categories": [
-        "tools",
-        "research"
-      ],
-      "kind": "Local app + public introduction",
-      "browserApp": false,
-      "description": "A searchable local library for arXiv PDFs, with titles, authors, abstracts, ratings, and tools for finding and opening papers across computers.",
-      "technology": "Python · HTML / CSS / JavaScript",
-      "note": "The public site explains the project. Its separately hosted browser library may require access permission.",
-      "site": {
-        "url": "https://rharriszzz.github.io/arxiv-shelf/",
-        "detail": "Project introduction · GitHub Pages"
-      },
-      "image": {
-        "path": "assets/images/arxiv-shelf.png",
-        "alt": "Publicly documented arXiv Shelf screenshot showing paper search, filters, ratings, and a list of papers.",
-        "caption": "Browser edition · screenshot from the public project site",
-        "source": "https://github.com/rharriszzz/arxiv-shelf/blob/master/docs/assets/arxiv-shelf-live.png"
-      },
-      "repository": {
-        "url": "https://github.com/rharriszzz/arxiv-shelf",
-        "public": true,
-        "fork": false,
-        "archived": false,
-        "lastPushed": "2026-11-01",
-        "branch": "master"
-      }
-    },
-    {
-      "slug": "recipes",
-      "title": "Recipes",
-      "featured": true,
-      "categories": [
-        "tools"
-      ],
-      "kind": "Public recipe website",
-      "browserApp": false,
-      "description": "A searchable, printable collection of family recipes and recipes recovered from earlier notes and conversations. Ingredients and instructions appear together in cooking order.",
-      "technology": "Python · HTML / CSS / JavaScript",
-      "note": "Preserves the original recipe formatting, with optional higher contrast and a printer-friendly layout.",
-      "site": {
-        "url": "https://rharriszzz.github.io/recipes/",
-        "detail": "Browse and print recipes · GitHub Pages"
-      },
-      "placeholder": "Recipes & cooking notes",
-      "placeholderDetail": "Public recipe collection · browse online",
-      "repository": {
-        "url": "https://github.com/rharriszzz/recipes",
-        "public": true,
-        "fork": false,
-        "archived": false,
-        "lastPushed": "2026-11-01",
-        "branch": "main"
-      }
-    },
-    {
       "slug": "beads",
       "title": "Beads",
-      "featured": true,
       "categories": [
         "craft",
         "visualization"
@@ -128,7 +67,6 @@
     {
       "slug": "madweave",
       "title": "MadWeave",
-      "featured": true,
       "categories": [
         "craft",
         "visualization"
@@ -158,9 +96,92 @@
       }
     },
     {
+      "slug": "arxiv-shelf",
+      "title": "arXiv Shelf",
+      "categories": [
+        "tools",
+        "research"
+      ],
+      "kind": "Local app + public introduction",
+      "browserApp": false,
+      "description": "A searchable local library for arXiv PDFs, with titles, authors, abstracts, ratings, and tools for finding and opening papers across computers.",
+      "technology": "Python · HTML / CSS / JavaScript",
+      "note": "The public site explains the project. Its separately hosted browser library may require access permission.",
+      "site": {
+        "url": "https://rharriszzz.github.io/arxiv-shelf/",
+        "detail": "Project introduction · GitHub Pages"
+      },
+      "image": {
+        "path": "assets/images/arxiv-shelf.png",
+        "alt": "Publicly documented arXiv Shelf screenshot showing paper search, filters, ratings, and a list of papers.",
+        "caption": "Browser edition · screenshot from the public project site",
+        "source": "https://github.com/rharriszzz/arxiv-shelf/blob/master/docs/assets/arxiv-shelf-live.png"
+      },
+      "repository": {
+        "url": "https://github.com/rharriszzz/arxiv-shelf",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-11-01",
+        "branch": "master"
+      }
+    },
+    {
+      "slug": "recipes",
+      "title": "Recipes",
+      "categories": [
+        "tools"
+      ],
+      "kind": "Public recipe website",
+      "browserApp": false,
+      "description": "A searchable, printable collection of family recipes and recipes recovered from earlier notes and conversations. Ingredients and instructions appear together in cooking order.",
+      "technology": "Python · HTML / CSS / JavaScript",
+      "note": "Preserves the original recipe formatting, with optional higher contrast and a printer-friendly layout.",
+      "site": {
+        "url": "https://rharriszzz.github.io/recipes/",
+        "detail": "Browse and print recipes · GitHub Pages"
+      },
+      "placeholder": "Recipes & cooking notes",
+      "placeholderDetail": "Public recipe collection · browse online",
+      "repository": {
+        "url": "https://github.com/rharriszzz/recipes",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-11-01",
+        "branch": "main"
+      }
+    },
+    {
+      "slug": "symphonium-disc-maker",
+      "title": "Symphonium Disc Maker",
+      "categories": [
+        "craft",
+        "tools"
+      ],
+      "kind": "Music-box geometry & fabrication",
+      "browserApp": false,
+      "description": "Turn note arrangements into SVG and DXF geometry for a 20-note music-box disc, with measured track layouts, drive holes, and printable labels.",
+      "technology": "Python · SVG / DXF",
+      "note": "Reverse-engineering and prototype work; manufactured fit and playback remain to be tested.",
+      "image": {
+        "path": "assets/images/symphonium-disc-maker.svg",
+        "alt": "Generated Pachelbel sampler disc drawing with circular note tracks, music holes, and a ring of drive holes.",
+        "caption": "Actual generated Pachelbel sampler disc geometry",
+        "source": "https://github.com/rharriszzz/symphonium-disc-maker/blob/main/prototype_pack/pachelbel_preview.svg"
+      },
+      "repository": {
+        "url": "https://github.com/rharriszzz/symphonium-disc-maker",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2026-10-02",
+        "branch": "main"
+      }
+    },
+    {
       "slug": "navier-stokes-vortex-lab",
       "title": "Navier–Stokes Vortex Lab",
-      "featured": true,
       "categories": [
         "research",
         "visualization"
@@ -188,7 +209,6 @@
     {
       "slug": "navier-stokes-physical-approximation",
       "title": "Navier–Stokes Physical Approximation",
-      "featured": true,
       "categories": [
         "research"
       ],
@@ -213,37 +233,8 @@
       }
     },
     {
-      "slug": "symphonium-disc-maker",
-      "title": "Symphonium Disc Maker",
-      "featured": true,
-      "categories": [
-        "craft",
-        "tools"
-      ],
-      "kind": "Music-box geometry & fabrication",
-      "browserApp": false,
-      "description": "Turn note arrangements into SVG and DXF geometry for a 20-note music-box disc, with measured track layouts, drive holes, and printable labels.",
-      "technology": "Python · SVG / DXF",
-      "note": "Reverse-engineering and prototype work; manufactured fit and playback remain to be tested.",
-      "image": {
-        "path": "assets/images/symphonium-disc-maker.svg",
-        "alt": "Generated Pachelbel sampler disc drawing with circular note tracks, music holes, and a ring of drive holes.",
-        "caption": "Actual generated Pachelbel sampler disc geometry",
-        "source": "https://github.com/rharriszzz/symphonium-disc-maker/blob/main/prototype_pack/pachelbel_preview.svg"
-      },
-      "repository": {
-        "url": "https://github.com/rharriszzz/symphonium-disc-maker",
-        "public": true,
-        "fork": false,
-        "archived": false,
-        "lastPushed": "2026-10-02",
-        "branch": "main"
-      }
-    },
-    {
       "slug": "fft-image-explorer",
       "title": "FFT Image Explorer",
-      "featured": true,
       "categories": [
         "visualization",
         "tools"
@@ -266,7 +257,6 @@
     {
       "slug": "bead_map",
       "title": "Bead Map",
-      "featured": false,
       "categories": [
         "craft",
         "tools"
@@ -287,7 +277,6 @@
     {
       "slug": "hsv_tools",
       "title": "HSV Tools",
-      "featured": false,
       "categories": [
         "visualization",
         "tools"
@@ -306,9 +295,27 @@
       }
     },
     {
+      "slug": "HIS_profile",
+      "title": "HIS Profile",
+      "categories": [
+        "tools"
+      ],
+      "kind": "Historical mainframe tooling",
+      "browserApp": false,
+      "description": "Collect and explore IBM z/OS Hardware Instrumentation Services profiling data, including tree views in notebooks.",
+      "technology": "Python · C · z/OS",
+      "repository": {
+        "url": "https://github.com/rharriszzz/HIS_profile",
+        "public": true,
+        "fork": false,
+        "archived": false,
+        "lastPushed": "2020-06-22",
+        "branch": "master"
+      }
+    },
+    {
       "slug": "sound",
       "title": "Sound",
-      "featured": false,
       "listed": false,
       "categories": [
         "research",
@@ -328,29 +335,8 @@
       }
     },
     {
-      "slug": "HIS_profile",
-      "title": "HIS Profile",
-      "featured": false,
-      "categories": [
-        "tools"
-      ],
-      "kind": "Historical mainframe tooling",
-      "browserApp": false,
-      "description": "Collect and explore IBM z/OS Hardware Instrumentation Services profiling data, including tree views in notebooks.",
-      "technology": "Python · C · z/OS",
-      "repository": {
-        "url": "https://github.com/rharriszzz/HIS_profile",
-        "public": true,
-        "fork": false,
-        "archived": false,
-        "lastPushed": "2020-06-22",
-        "branch": "master"
-      }
-    },
-    {
       "slug": "zos_python",
       "title": "z/OS Python",
-      "featured": false,
       "listed": false,
       "categories": [
         "tools"
@@ -371,7 +357,6 @@
     {
       "slug": "izODA.github.io",
       "title": "IzODA documentation",
-      "featured": false,
       "listed": false,
       "categories": [
         "tools"
@@ -392,7 +377,6 @@
     {
       "slug": "numpy",
       "title": "NumPy fork",
-      "featured": false,
       "listed": false,
       "categories": [
         "tools",
