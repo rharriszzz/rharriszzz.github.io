@@ -52,6 +52,34 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(listed[0]["slug"], "reversi")
         self.assertEqual(listed[-1]["slug"], "HIS_profile")
 
+    def test_project_pictures_link_to_site_or_repository(self):
+        # Every visible picture is a navigable shortcut, with the live site
+        # preferred over the source repository whenever a site exists.
+        for project in self.data["projects"]:
+            if not project.get("listed", True):
+                continue
+            with self.subTest(project=project["slug"]):
+                card = build.render_card(project)
+                elements = Document(card).elements
+                media_links = [(i, attrs) for i, (tag, attrs) in enumerate(elements)
+                               if tag == "a" and attrs.get("class") == "project-media-link"]
+                self.assertEqual(len(media_links), 1)
+                index, link = media_links[0]
+                self.assertEqual(link["href"],
+                                 project["site"]["url"] if "site" in project
+                                 else project["repository"]["url"])
+                destination_type = "Live Site" if "site" in project else "GitHub Repository"
+                self.assertEqual(link["aria-label"],
+                                 f'{project["title"]} — {destination_type}')
+                if "image" in project:
+                    self.assertEqual(elements[index + 1][0], "img")
+                    self.assertEqual(elements[index + 1][1]["class"], "project-image")
+                    # Captions stay as plain text outside the clickable picture.
+                    self.assertLess(card.index("</a>"), card.index("<figcaption>"))
+                else:
+                    self.assertEqual(elements[index + 1][0], "div")
+                    self.assertEqual(elements[index + 1][1]["class"], "image-placeholder")
+
     def test_homepage_introduction_is_plain_and_concise(self):
         self.assertIn('<h1 id="title">Projects</h1>', self.page)
         self.assertIn('Links to project websites, documentation, and source code.', self.page)
