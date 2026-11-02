@@ -410,27 +410,6 @@
         "lastPushed": "2019-03-14",
         "branch": "master"
       }
-    },
-    {
-      "slug": "python-ibmdb",
-      "title": "Python IBM DB fork",
-      "featured": false,
-      "listed": false,
-      "categories": [
-        "tools"
-      ],
-      "kind": "Historical fork",
-      "browserApp": false,
-      "description": "An older fork of the Python drivers for IBM Db2 and Informix, including the DB-API interface.",
-      "technology": "Python · IBM databases",
-      "repository": {
-        "url": "https://github.com/rharriszzz/python-ibmdb",
-        "public": true,
-        "fork": true,
-        "archived": false,
-        "lastPushed": "2019-11-22",
-        "branch": "master"
-      }
     }
   ]
 }
