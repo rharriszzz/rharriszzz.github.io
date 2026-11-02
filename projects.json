@@ -248,14 +248,19 @@
       "description": "Inspect color images in spatial and frequency domains. Adjust channels, masks, windows, and frequency filters, then compare the input, FFT, and reconstructed image.",
       "technology": "Python · NumPy · Matplotlib",
       "note": "Runs in a local desktop window. Includes a bracelet boundary and centerline scanner.",
-      "placeholder": "Spatial ↔ Frequency",
       "repository": {
         "url": "https://github.com/rharriszzz/fft-image-explorer",
         "public": true,
         "fork": false,
         "archived": false,
-        "lastPushed": "2026-07-11",
+        "lastPushed": "2026-11-02",
         "branch": "main"
+      },
+      "image": {
+        "url": "https://raw.githubusercontent.com/rharriszzz/fft-image-explorer/main/docs/figures/local-fft-card.png",
+        "alt": "Computed FFT Image Explorer illustration showing the original bead necklace with a selected centerline point and circular Gaussian window, alongside its real two-dimensional Fourier magnitude.",
+        "caption": "Gaussian-windowed necklace photograph · computed 2D FFT",
+        "source": "https://github.com/rharriszzz/fft-image-explorer/blob/main/docs/figures/local-fft-card.png"
       }
     },
     {

@@ -60,20 +60,23 @@ Local images in this index are unmodified copies of public repository assets, ex
 the Reversi screenshot, which was captured from its public app after a real move.
 Their source locations are recorded in the catalog and [asset notes](docs/INVENTORY.md).
 The arXiv Shelf image was already published on its public landing page; no local
-catalog or PDF collection is copied here. FFT Image Explorer uses a neutral
-typographic panel because no committed application screenshot was found. It does
-not reuse an input photograph as if it were a screenshot.
+catalog or PDF collection is copied here. FFT Image Explorer uses a
+computed composite of the original necklace photograph and its actual
+Gaussian-windowed 2D FFT, generated reproducibly in that repository.
+It is a scientific illustration, **not** an application screenshot.
 
 Removing an image from an entry also removes it from the next published build.
 Only referenced local images are copied. SVGs must be self-contained static drawings.
-The HIS Profile and Recipes cards instead display images from their original
-public GitHub repositories via `image.url`, with explicit source links and captions.
+The HIS Profile, Recipes, and FFT Image Explorer cards instead display images
+from their original public GitHub repositories via `image.url`, with explicit
+source links and captions.
 Recipes uses the reviewed `images/homepage-card.png`, an actual homepage screenshot
 of the heading, introduction, and complete recipe list, cropped to exclude the
 empty right side. Regenerate it in the Recipes repository using its documented
 `npm run capture:homepage-card` command when that homepage changes.
-Hosted image URLs are restricted to images under the owning project’s GitHub
-raw-content path. These images are not copied into the Pages artifact.
+Hosted image URLs are restricted to `images/` or `docs/figures/` in the
+owning project's GitHub raw-content path. These images are not copied into
+the Pages artifact.
 
 Follow the [project-image workflow](docs/PROJECT_IMAGES.md) for future screenshot
 refreshes, including the Recipes capture instructions, review checks, source-first

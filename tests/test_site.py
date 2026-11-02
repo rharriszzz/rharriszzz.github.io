@@ -78,6 +78,42 @@ class SiteTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build.validate(data)
 
+    def test_fft_explorer_uses_computed_candidate_five_card(self):
+        project = next(p for p in self.data["projects"] if p["slug"] == "fft-image-explorer")
+        image = project["image"]
+        url = "https://raw.githubusercontent.com/rharriszzz/fft-image-explorer/main/docs/figures/local-fft-card.png"
+        source = "https://github.com/rharriszzz/fft-image-explorer/blob/main/docs/figures/local-fft-card.png"
+        self.assertEqual(image["url"], url)
+        self.assertEqual(image["source"], source)
+        self.assertIn("computed", image["alt"].lower())
+        self.assertNotIn("screenshot", image["caption"].lower())
+        card = build.render_card(project)
+        imgs = [attrs for tag, attrs in Document(card).elements if tag == "img"]
+        self.assertEqual(len(imgs), 1)
+        self.assertEqual(imgs[0]["src"], url)
+        self.assertEqual(imgs[0]["alt"], image["alt"])
+        self.assertNotIn("image-placeholder", card)
+        self.assertIn(image["caption"], card)
+        published = json.loads((ROOT / "dist/projects.json").read_text())
+        self.assertEqual(next(p for p in published["projects"]
+                              if p["slug"] == "fft-image-explorer")["image"], image)
+
+    def test_hosted_image_paths_stay_in_owning_repo(self):
+        for bad_url in [
+            "https://example.com/rharriszzz/fft-image-explorer/main/docs/figures/local-fft-card.png",
+            "https://raw.githubusercontent.com/someone/fft-image-explorer/main/docs/figures/local-fft-card.png",
+            "https://raw.githubusercontent.com/rharriszzz/fft-image-explorer/old/docs/figures/local-fft-card.png",
+            "https://raw.githubusercontent.com/rharriszzz/fft-image-explorer/main/secrets/image.png",
+            "https://raw.githubusercontent.com/rharriszzz/fft-image-explorer/main/docs/figures/../secret.png",
+            "https://raw.githubusercontent.com/rharriszzz/fft-image-explorer/main/docs/figures/local-fft-card.png?raw=true",
+        ]:
+            data = copy.deepcopy(self.data)
+            project = next(p for p in data["projects"]
+                           if p["slug"] == "fft-image-explorer")
+            project["image"]["url"] = bad_url
+            with self.subTest(bad_url=bad_url), self.assertRaises(ValueError):
+                build.validate(data)
+
     def test_recipes_displays_reviewed_homepage_screenshot(self):
         recipes = next(p for p in self.data["projects"] if p["slug"] == "recipes")
         image = recipes["image"]
