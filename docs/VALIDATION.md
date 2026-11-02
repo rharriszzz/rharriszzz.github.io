@@ -197,3 +197,18 @@ The source PNG and its generator remain in the FFT repository and are not
 copied to index deployment artifacts.
 
 This is a scoped figure integration, not a new repository-inventory review.
+
+## Bead Map illustration — 2026-11-01 (America/New_York)
+
+The owner reviewed and approved the real necklace-and-masks comparison
+(`bead-map-card.png`, 1200 × 660). The Bead Map source figure and its
+reproducible generation script were merged into `bead_map/main` as
+`5b8bd82` in [pull request #1](https://github.com/rharriszzz/bead_map/pull/1).
+The main-branch PNG was verified before updating this directory.
+
+The directory now references the owning repository's exact
+`docs/figures/bead-map-card.png` through its raw GitHub URL and records
+descriptive alt text and a caption. The source image remains in Bead Map and
+is not copied into the index deployment. A focused regression test checks
+the source, published catalog and rendered HTML; unrelated projects and
+the central directory layout are unchanged.

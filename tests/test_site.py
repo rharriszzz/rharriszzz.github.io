@@ -86,6 +86,25 @@ class SiteTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build.validate(data)
 
+    def test_bead_map_uses_approved_photograph_and_mask_figure(self):
+        project = next(p for p in self.data["projects"] if p["slug"] == "bead_map")
+        expected = "https://raw.githubusercontent.com/rharriszzz/bead_map/main/docs/figures/bead-map-card.png"
+        source = "https://github.com/rharriszzz/bead_map/blob/main/docs/figures/bead-map-card.png"
+        self.assertEqual(project["image"]["url"], expected)
+        self.assertEqual(project["image"]["source"], source)
+        self.assertIn("photograph", project["image"]["alt"].lower())
+        self.assertIn("color", project["image"]["alt"].lower())
+        card = build.render_card(project)
+        image_tags = [attrs for tag, attrs in Document(card).elements if tag == "img"]
+        self.assertEqual(len(image_tags), 1)
+        self.assertEqual(image_tags[0]["src"], expected)
+        self.assertEqual(image_tags[0]["alt"], project["image"]["alt"])
+        self.assertIn(project["image"]["caption"], card)
+        self.assertNotIn("image-placeholder", card)
+        published = json.loads((ROOT / "dist/projects.json").read_text())
+        listed = next(p for p in published["projects"] if p["slug"] == "bead_map")
+        self.assertEqual(listed["image"], project["image"])
+
     def test_fft_explorer_uses_computed_candidate_five_card(self):
         project = next(p for p in self.data["projects"] if p["slug"] == "fft-image-explorer")
         image = project["image"]
