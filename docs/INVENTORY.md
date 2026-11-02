@@ -6,10 +6,11 @@ requests, HTTPS checks, and browser inspection. No other repository was modified
 The original API snapshots and local investigation files were kept outside this
 checkout and are not part of the published artifact.
 
-The current index source describes **17 repositories**: 12 projects in a single
-ordered directory, four editorially unlisted historical projects, and this
-central index. All 16 other retained repositories remain documented here,
-but only 12 are currently shown on the index website. No private repository names, data, or files are included. No repository
+The current index source describes **17 repositories**: 11 projects in a single
+ordered directory, five editorially unlisted projects (four historical
+repositories and Navier–Stokes Vortex Lab), and this central index.
+All 16 other retained repositories remain documented here, but only 11
+are currently shown on the index website. No private repository names, data, or files are included. No repository
 was marked archived in GitHub. “Historical” below describes age and context, not
 GitHub’s archived flag or an assertion that the code is unsupported.
 
@@ -123,6 +124,17 @@ Its [README](https://github.com/rharriszzz/hsv_tools/blob/main/README.md) and
 record the source photograph, exact sample coordinates, tolerance settings and
 checks. The central directory references the source image rather than
 duplicating it.
+
+## Editorial note — Navier–Stokes Vortex Lab
+
+On 2026-11-01, Navier–Stokes Vortex Lab was removed from the central index
+at the owner's request, without deleting, archiving, or otherwise modifying
+its public repository. The current preview mainly depicts a tank and tracer
+particles, while the interesting physical behavior and boundary-control
+questions are not yet conveyed clearly enough for this project index.
+The research remains available through its repository. This is an editorial
+visibility decision, **not** a finding that its numerical work is invalid
+and **not** a decision about restarting or abandoning research.
 
 ## Verification scope
 
