@@ -52,6 +52,14 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(listed[0]["slug"], "reversi")
         self.assertEqual(listed[-1]["slug"], "HIS_profile")
 
+    def test_homepage_introduction_is_plain_and_concise(self):
+        self.assertIn('<h1 id="title">Projects</h1>', self.page)
+        self.assertIn('Links to project websites, documentation, and source code.', self.page)
+        self.assertIn('About this index', self.page)
+        self.assertNotIn('Projects &amp;<br>', self.page)
+        self.assertNotIn('Questions become code', self.page)
+        self.assertNotIn('the occasional music-box disc', self.page)
+
     def test_unlisted_projects_do_not_leak_into_published_site_or_catalog(self):
         unlisted = {p["slug"] for p in self.data["projects"] if not p.get("listed", True)}
         self.assertEqual(unlisted, {"sound", "zos_python", "izODA.github.io", "numpy"})
