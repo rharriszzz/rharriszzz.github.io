@@ -23,7 +23,7 @@ GitHub’s archived flag or an assertion that the code is unsupported.
 | navier-stokes-vortex-lab | 2026-09-27 | Original; recent visualization and boundary-control research | No published site found; Pages disabled | README, STATUS.md, source tree, preview.png and rendering evidence; finite kinematic-model limits retained |
 | navier-stokes-physical-approximation | 2026-09-10 | Original; recent numerical/physical research | No published site found; Pages disabled | README, source/config/test tree and committed baseline/reference plots; no accepted nonlinear core claimed |
 | symphonium-disc-maker | 2026-10-02 | Original; recent geometry/fabrication experiment | No published site found; Pages disabled | README, source/test tree, pyproject, reference figures, prototype SVG; pending physical fit retained |
-| fft-image-explorer | 2026-07-11 | Original; recent; interactive local Python image analysis | No published site found; Pages disabled | README, fft_image_explorer.py / scanner tree, requirements and input images; no application screenshot committed |
+| fft-image-explorer | 2026-11-02 | Original; interactive local Python image analysis | No published site found; Pages disabled | README, Gaussian FFT figure generator and numerical tests, original necklace and saved centerline; reviewed Candidate 5 scientific figure (not an app screenshot) |
 | bead_map | 2025-04-28 | Original; bead-detection experiments | No published site found; Pages disabled | No README; bead_map.py, bracelet-pattern-extractor.py and mask images |
 | hsv_tools | 2025-04-26 | Original; image-analysis utilities | No published site found; Pages disabled | No README; hsv_picker.py, hsv_counts.py, requirements and masks |
 | sound | 2017-07-30 | Original; historical Fourier/audio experiments | No published site found; Pages disabled | No README; test.c, fft.c, harmonics.c and plotting scripts |
@@ -54,8 +54,10 @@ photograph. Madweave uses its committed interface image. Vortex Lab uses its
 committed illustrative tank preview. Physical Approximation uses the published
 explicit comparison plot, whose title states that nonlinear core corrections
 are omitted. Symphonium uses its generated sampler SVG, not a photo of a tested
-physical disc. FFT Image Explorer has a neutral text panel rather than a
-fabricated interface. Recipes embeds its reviewed actual homepage screenshot from
+physical disc. FFT Image Explorer uses a computed two-panel scientific
+illustration from its original necklace photograph and actual Gaussian-windowed
+2D FFT, not an application screenshot. Recipes embeds its reviewed actual
+homepage screenshot from
 [`images/homepage-card.png`](https://github.com/rharriszzz/recipes/blob/main/images/homepage-card.png).
 The Recipes repository's `scripts/capture_homepage_card.mjs` rebuilds and serves
 the current homepage, then measures the text in `main.simple-index` to capture
@@ -74,6 +76,21 @@ published projects.json contains listed entries only.
 The HIS Profile card embeds the authentic public `images/Tree.jpg` from its
 own repository without copying it into the index; image-mask figures were
 inspected but not copied into the index. Historical forks retain explicit fork labels.
+
+### FFT Image Explorer — 2026-11-01 illustration
+
+The selected [Candidate 5 two-panel figure](https://github.com/rharriszzz/fft-image-explorer/blob/main/docs/figures/local-fft-card.png)
+is a **1600 × 1000 computed illustration**, not an application screenshot.
+The left panel shows the original necklace, a selected centerline point, and
+Gaussian contours; the right panel shows the corresponding actual 2D FFT.
+The card references `docs/figures/local-fft-card.png` from the FFT repository
+directly, with provenance in `projects.json`. The index does not copy it.
+
+The FFT repository contains a reproducible
+[figure-generation script](https://github.com/rharriszzz/fft-image-explorer/blob/main/scripts/generate_fft_figures.py),
+numerical tests and
+[figure documentation](https://github.com/rharriszzz/fft-image-explorer/blob/main/docs/fft-figures.md).
+Regenerate and review the figure in that repository when refreshing it here.
 
 ## Verification scope
 
