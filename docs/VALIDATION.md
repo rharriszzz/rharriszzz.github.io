@@ -229,3 +229,17 @@ README and numerical validation. No source PNG is copied into the index
 deployment. The focused regression test checks the exact hosted URL,
 source URL and rendered image card. Other cards remain unchanged.
 
+
+## Vortex Lab editorial visibility — 2026-11-01 (America/New_York)
+
+At the owner's request, the `navier-stokes-vortex-lab` project is now
+`"listed": false` in `projects.json`. The built homepage and published
+catalog omit its card and source image. The `navier-stokes-physical-approximation`
+project remains listed. Other listed projects retain their order and
+metadata. All research source, notes, and renders stay intact in the
+separate public Vortex Lab repository; this edit does not judge its
+scientific validity or authorize new computations.
+
+The test suite now checks that the set of unlisted projects includes
+Vortex Lab and specifically prevents its HTML card from being published,
+while keeping the other Navier–Stokes entry visible.
