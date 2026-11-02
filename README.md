@@ -16,12 +16,19 @@ or arXiv Shelf deployments.
 `projects.json` is the single source for project metadata. `index.template.html`
 contains the page structure; `style.css` and `app.js` control appearance and
 optional filtering. `scripts/build.py` renders a complete static page into
-`dist/`, including all project links. Visitors do not need JavaScript or access
+`dist/`, including all listed project links. Visitors do not need JavaScript or access
 to GitHub’s API to read the directory.
 
 To change a description, edit its `description`, `kind`, `technology`, and
 optional `note` fields. Keep scientific limitations explicit. Use `featured:
 true` for a large illustrated card, or `false` for the secondary collection.
+
+Set `listed: false` on an entry to exclude it from the website, search, counts,
+public JSON catalog, and deployed assets without deleting its source metadata.
+Omit the property (or use `true`) to list a project again. Historical projects
+are included selectively: HIS Profile remains listed; Sound, z/OS Python,
+IzODA documentation, and the NumPy/IBM DB forks are currently unlisted.
+Sound can be restored if the project becomes interesting again.
 
 To add a project:
 
