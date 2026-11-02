@@ -62,11 +62,16 @@ def validate(data, root=ROOT):
                 url = image["url"]
                 validate_url(url)
                 parts = urlsplit(url)
-                prefix = f"/rharriszzz/{slug}/{repo['branch']}/images/"
+                prefix = f"/rharriszzz/{slug}/{repo['branch']}/"
                 if (parts.netloc != "raw.githubusercontent.com"
                         or parts.query or parts.fragment
-                        or not re.fullmatch(re.escape(prefix) + r"[A-Za-z0-9_.-]+\.(jpg|png|webp)", parts.path)):
+                        or not parts.path.startswith(prefix)):
                     raise ValueError(f"Unexpected hosted project image: {slug}")
+                relative_path = parts.path[len(prefix):]
+                if not re.fullmatch(
+                        r"(?:images|docs/figures)/[A-Za-z0-9_.-]+\.(jpg|png|webp)",
+                        relative_path):
+                    raise ValueError(f"Unexpected hosted project image path: {slug}")
             else:
                 path = Path(image["path"])
                 if not re.fullmatch(r"assets/images/[a-z0-9-]+\.(png|jpg|svg|webp)", path.as_posix()):
