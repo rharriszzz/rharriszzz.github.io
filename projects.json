@@ -279,8 +279,14 @@
         "public": true,
         "fork": false,
         "archived": false,
-        "lastPushed": "2025-04-28",
+        "lastPushed": "2026-11-02",
         "branch": "main"
+      },
+      "image": {
+        "url": "https://raw.githubusercontent.com/rharriszzz/bead_map/main/docs/figures/bead-map-card.png",
+        "alt": "Original photograph of a red, yellow, and black beaded necklace alongside the corresponding color-coded yellow, red, and black photographic mask selections, shown at matching crop coordinates.",
+        "caption": "Necklace photograph and aligned color-mask selections",
+        "source": "https://github.com/rharriszzz/bead_map/blob/main/docs/figures/bead-map-card.png"
       }
     },
     {
