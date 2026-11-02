@@ -40,6 +40,9 @@ h2 { font-size: 38px; }
 .project-card { grid-column: span 2; background: var(--white); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
 .project-card:nth-child(-n+2) { grid-column: span 3; }
 .project-card figure { margin: 0; border-bottom: 1px solid var(--line); background: #f2f5f0; }
+.project-media-link { display: block; }
+.project-media-link:hover .project-image, .project-media-link:hover .image-placeholder { opacity: .94; }
+.project-media-link:focus-visible { outline-offset: -4px; }
 .project-image { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: contain; background: #fff; }
 .project-card:first-child .project-image { object-fit: cover; object-position: top; }
 figcaption { padding: 8px 15px; font-size: 10px; line-height: 1.4; color: var(--muted); border-top: 1px solid #e8ede6; }
