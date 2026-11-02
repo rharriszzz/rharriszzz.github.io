@@ -42,6 +42,26 @@ Review both the full 1600 × 1000 illustration and its 400 × 250
 `local-fft-card-preview.png` before publishing changes. The index uses the
 stable main-branch raw PNG and never copies or regenerates it.
 
+## Bead Map: regenerate the approved mask illustration
+
+The approved [two-panel image](https://github.com/rharriszzz/bead_map/blob/main/docs/figures/bead-map-card.png)
+shows the original necklace photograph next to the color-coded selections from
+the repository's three committed mask images, with identical source coordinates.
+It is a mask illustration, not a screenshot or a validated reconstruction.
+
+The Bead Map repository maintains `docs/figures/bead-map-card.png`. To regenerate:
+
+```sh
+python3 -m pip install 'Pillow==12.1.1'
+python3 scripts/generate_bead_map_figures.py
+```
+
+Review both that 1200 × 660 image and its
+`docs/figures/bead-map-card-400.png` preview. Keep the mask color
+assignments and crop correspondence truthful. Commit and push the source PNG
+there before relying on it in the index. The index embeds the stable hosted
+image without making an additional copy.
+
 ## Validate and publish an index change
 
 If image metadata changes, update `projects.json`, the provenance notes in
