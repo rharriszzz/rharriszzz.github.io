@@ -86,6 +86,28 @@ class SiteTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             build.validate(data)
 
+
+    def test_hsv_tools_uses_real_sampled_hsv_mask_card(self):
+        project = next(p for p in self.data["projects"] if p["slug"] == "hsv_tools")
+        image = project["image"]
+        url = "https://raw.githubusercontent.com/rharriszzz/hsv_tools/main/docs/figures/hsv-tools-card.png"
+        source = "https://github.com/rharriszzz/hsv_tools/blob/main/docs/figures/hsv-tools-card.png"
+        self.assertEqual(image["url"], url)
+        self.assertEqual(image["source"], source)
+        self.assertIn("HSV", image["alt"])
+        self.assertIn("sampling line", image["alt"])
+        self.assertNotIn("screenshot", image["caption"].lower())
+        card = build.render_card(project)
+        imgs = [attrs for tag, attrs in Document(card).elements if tag == "img"]
+        self.assertEqual(len(imgs), 1)
+        self.assertEqual(imgs[0]["src"], url)
+        self.assertEqual(imgs[0]["alt"], image["alt"])
+        self.assertIn(image["caption"], card)
+        self.assertNotIn("image-placeholder", card)
+        published = json.loads((ROOT / "dist/projects.json").read_text())
+        self.assertEqual(next(p for p in published["projects"]
+                              if p["slug"] == "hsv_tools")["image"], image)
+
     def test_bead_map_uses_approved_photograph_and_mask_figure(self):
         project = next(p for p in self.data["projects"] if p["slug"] == "bead_map")
         expected = "https://raw.githubusercontent.com/rharriszzz/bead_map/main/docs/figures/bead-map-card.png"
