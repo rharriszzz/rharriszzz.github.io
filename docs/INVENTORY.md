@@ -24,7 +24,7 @@ GitHub’s archived flag or an assertion that the code is unsupported.
 | navier-stokes-physical-approximation | 2026-09-10 | Original; recent numerical/physical research | No published site found; Pages disabled | README, source/config/test tree and committed baseline/reference plots; no accepted nonlinear core claimed |
 | symphonium-disc-maker | 2026-10-02 | Original; recent geometry/fabrication experiment | No published site found; Pages disabled | README, source/test tree, pyproject, reference figures, prototype SVG; pending physical fit retained |
 | fft-image-explorer | 2026-11-02 | Original; interactive local Python image analysis | No published site found; Pages disabled | README, Gaussian FFT figure generator and numerical tests, original necklace and saved centerline; reviewed Candidate 5 scientific figure (not an app screenshot) |
-| bead_map | 2025-04-28 | Original; bead-detection experiments | No published site found; Pages disabled | No README; bead_map.py, bracelet-pattern-extractor.py and mask images |
+| bead_map | 2026-11-02 | Original; bead-detection and photographic-mask experiments | No published site found; Pages disabled | README, Python image-analysis scripts, original mask images and reproducible two-panel illustration in docs/figures |
 | hsv_tools | 2025-04-26 | Original; image-analysis utilities | No published site found; Pages disabled | No README; hsv_picker.py, hsv_counts.py, requirements and masks |
 | sound | 2017-07-30 | Original; historical Fourier/audio experiments | No published site found; Pages disabled | No README; test.c, fft.c, harmonics.c and plotting scripts |
 | HIS_profile | 2020-06-22 | Original repository; historical Rocket Software / z/OS tooling | No published site found; Pages disabled | README, C/Python package, notebook tree, and published `images/Tree.jpg` Bokeh radial profiling example; no ownership claim over employer code |
@@ -91,6 +91,21 @@ The FFT repository contains a reproducible
 numerical tests and
 [figure documentation](https://github.com/rharriszzz/fft-image-explorer/blob/main/docs/fft-figures.md).
 Regenerate and review the figure in that repository when refreshing it here.
+
+### Bead Map — 2026-11-01 card image
+
+The owner selected the [two-panel bead-map illustration](https://github.com/rharriszzz/bead_map/blob/main/docs/figures/bead-map-card.png).
+It juxtaposes an actual cropped necklace photograph and the same crop of the
+existing hand-selected yellow, red and black masks, recolored to show their
+respective categories. It is an illustration of intermediate mask results,
+not a claim of validated bead-center identification or a completed sequence.
+
+The Bead Map repository owns the source 1200 × 660 PNG, its
+[generator](https://github.com/rharriszzz/bead_map/blob/main/scripts/generate_bead_map_figures.py),
+400 × 220 preview, candidate sheet, and
+[README instructions](https://github.com/rharriszzz/bead_map/blob/main/README.md).
+The central index embeds its main-branch image URL rather than copying it into
+the deployment artifact.
 
 ## Verification scope
 
