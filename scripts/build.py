@@ -74,7 +74,7 @@ def render_card(project):
     kind = f'<p class="card-kind{" browser" if p["browserApp"] else ""}">{escape(p["kind"])}</p>'
     repo = (f'<a href="{escape(p["repository"]["url"])}" aria-label="{escape(p["title"])} — GitHub Repository">'
             'GitHub Repository <span aria-hidden="true">↗</span></a>')
-    title = f'<h4>{escape(p["title"])}</h4>'
+    title = f'<h3>{escape(p["title"])}</h3>'
     description = f'<p class="card-description">{escape(p["description"])}</p>'
     if "image" in p:
         im = p["image"]
@@ -82,8 +82,8 @@ def render_card(project):
                  f'width="800" height="500" loading="lazy" decoding="async">'
                  f'<figcaption>{escape(im["caption"])}</figcaption></figure>')
     else:
-        media = (f'<div class="image-placeholder" aria-label="No application screenshot available">'
-                 f'<span>{escape(p.get("placeholder", p["title"]))}</span><small>{escape(p.get("placeholderDetail", "Local application · source available"))}</small></div>')
+        media = (f'<div class="image-placeholder" aria-label="No project image available">'
+                 f'<span>{escape(p.get("placeholder", p["title"]))}</span><small>{escape(p.get("placeholderDetail", "Repository and source code"))}</small></div>')
     note = f'<p class="card-note">{escape(p["note"])}</p>' if p.get("note") else ""
     live = (f'<a class="live-link" href="{escape(p["site"]["url"])}" aria-label="{escape(p["title"])} — Live Site">'
             'Live Site <span aria-hidden="true">↗</span></a>') if "site" in p else ""
