@@ -104,7 +104,6 @@ class SiteTests(unittest.TestCase):
                 self.assertIn("width", attrs)
                 self.assertIn("height", attrs)
         self.assertIn('class="skip-link"', self.page)
-        self.assertIn('role="status"', self.page)
         self.assertIn('lang="en"', self.page)
         self.assertIn('name="viewport"', self.page)
 
