@@ -50,13 +50,13 @@ To add a project:
 
 ### Images
 
-Place reviewed project images in `assets/images/`. Add an `image` object with
+Place reviewed local project images in `assets/images/`. Add an `image` object with
 `path`, meaningful `alt` text, a factual `caption`, and the public `source` URL.
 Use actual project screenshots, renders, plots, or photographs. Keep screenshots
 free of browser chrome, local paths, personal files, tokens, and private data.
 Check licensing and attribution before copying third-party material.
 
-Images in this index are unmodified copies of public repository assets, except
+Local images in this index are unmodified copies of public repository assets, except
 the Reversi screenshot, which was captured from its public app after a real move.
 Their source locations are recorded in the catalog and [asset notes](docs/INVENTORY.md).
 The arXiv Shelf image was already published on its public landing page; no local
@@ -65,7 +65,11 @@ typographic panel because no committed application screenshot was found. It does
 not reuse an input photograph as if it were a screenshot.
 
 Removing an image from an entry also removes it from the next published build.
-Only referenced images are copied. SVGs must be self-contained static drawings.
+Only referenced local images are copied. SVGs must be self-contained static drawings.
+The HIS Profile card instead displays `images/Tree.jpg` from its original public
+GitHub repository via `image.url`, with an explicit source link and caption.
+Hosted image URLs are restricted to images under the owning project’s GitHub
+raw-content path. This image is not copied into the Pages artifact.
 
 ## Build, test, and preview
 
