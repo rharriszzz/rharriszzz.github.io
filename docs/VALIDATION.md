@@ -124,3 +124,14 @@ then verified Save Project, direct offline opening, further editing and saving,
 reopening that new copy, and Open Project importing it back into the site. The
 landing page, guide, and editor fit three viewport widths, and static export
 still worked. There were no page exceptions or failed HTTP responses.
+
+
+## Simplified single-list layout — 2026-11-01
+
+The index now renders every listed project in a single ordered card grid, with
+Reversi first and HIS Profile last. The separate Selected / More groups, search,
+category filters, no-results state, and client-side JavaScript were removed.
+The page remains server-rendered static HTML; unlisted historical projects remain
+excluded. The test suite now checks the single grid and absence of the removed UI.
+The original browser-review notes above are a historical record of the earlier
+layout, not a claim that filtering still exists.
