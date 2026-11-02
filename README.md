@@ -27,8 +27,10 @@ Set `listed: false` on an entry to exclude it from the website, search, counts,
 public JSON catalog, and deployed assets without deleting its source metadata.
 Omit the property (or use `true`) to list a project again. Historical projects
 are included selectively: HIS Profile remains listed; Sound, z/OS Python,
-IzODA documentation, and the NumPy/IBM DB forks are currently unlisted.
+IzODA documentation, and the NumPy fork are currently unlisted.
 Sound can be restored if the project becomes interesting again.
+Deleted repositories should be removed from `projects.json`, not retained as
+unlisted entries; the deleted Python IBM DB fork was removed accordingly.
 
 To add a project:
 
