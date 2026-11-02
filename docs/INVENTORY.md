@@ -6,9 +6,9 @@ requests, HTTPS checks, and browser inspection. No other repository was modified
 The original API snapshots and local investigation files were kept outside this
 checkout and are not part of the published artifact.
 
-The inventory contains **18 public repositories**: nine featured projects,
-three listed secondary projects, five editorially unlisted historical projects,
-and this central index. All 17 other public repositories remain documented
+The current index source describes **17 repositories**: nine featured projects,
+three listed secondary projects, four editorially unlisted historical projects,
+and this central index. All 16 other retained repositories remain documented
 here, but only 12 are currently shown on the index website. No private repository names, data, or files are included. No repository
 was marked archived in GitHub. “Historical” below describes age and context, not
 GitHub’s archived flag or an assertion that the code is unsupported.
@@ -31,7 +31,6 @@ GitHub’s archived flag or an assertion that the code is unsupported.
 | zos_python | 2020-09-21 | Original repository; historical z/OS tooling | No published site found; Pages disabled | No README; setup.py, package initialization, system-service source/test tree |
 | izODA.github.io | 2017-10-13 | Original repository; historical IBM documentation | Metadata homepage https://IzODA.github.io/ returns 404; account copy has Pages disabled | README, index.html and documentation/image tree; no internal IBM links copied to the index |
 | numpy | 2019-03-14 | Fork; historical | Upstream homepage is not this fork’s live site; no live link offered | README and scientific package/build/test tree; no upstream branding copied |
-| python-ibmdb | 2019-11-22 | Fork; historical | No fork website found; Pages disabled | README and IBM_DB driver/build/test tree |
 | rharriszzz.github.io | 2026-11-01 | This index; empty public repository at task start | Pages already configured for Actions, with no previous homepage | No existing files or commits to overwrite; no separate card for the index itself |
 
 The Madweave README names `http://fiberwoman.com/madweave/MadWeaver.html`.
@@ -61,8 +60,10 @@ site screenshot is available.
 
 Supporting tools have compact text entries to keep the main directory readable.
 The historical section lists only HIS Profile. Sound, z/OS Python, IzODA
-documentation, and the NumPy and Python IBM DB forks are intentionally unlisted,
-but retain their metadata in source control. Sound may be restored later. The
+documentation, and the NumPy fork are intentionally unlisted,
+but retain their metadata in source control. Sound may be restored later.
+The Python IBM DB fork was deleted from GitHub by its owner and was removed
+from this source catalog; the original 2026-11-01 review is historical. The
 published projects.json contains listed entries only.
 Existing HIS Profile and image-mask figures were inspected but not copied into
 the secondary collection. Historical forks retain explicit fork labels.
