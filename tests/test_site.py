@@ -207,6 +207,9 @@ class SiteTests(unittest.TestCase):
         self.assertIn("homepage screenshot", images[0]["alt"])
         self.assertIn(image["caption"], card)
         self.assertNotIn("image-placeholder", card)
+        css = (ROOT / "style.css").read_text()
+        self.assertIn('.project-card[data-project="recipes"] figure,', css)
+        self.assertIn('.project-card[data-project="recipes"] .project-image { background: #fffff0; }', css)
         published = json.loads((ROOT / "dist/projects.json").read_text())
         self.assertEqual(next(p for p in published["projects"] if p["slug"] == "recipes")["image"], image)
 
