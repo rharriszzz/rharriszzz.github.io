@@ -208,7 +208,8 @@
         "archived": false,
         "lastPushed": "2026-09-27",
         "branch": "main"
-      }
+      },
+      "listed": false
     },
     {
       "slug": "navier-stokes-physical-approximation",
