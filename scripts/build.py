@@ -51,19 +51,33 @@ def validate(data, root=ROOT):
                 raise ValueError(f"Site type and host required: {slug}")
         if "image" in project:
             image = project["image"]
-            path = Path(image["path"])
-            if not re.fullmatch(r"assets/images/[a-z0-9-]+\.(png|jpg|svg|webp)", path.as_posix()):
-                raise ValueError(f"Unexpected image path: {path}")
-            candidate = root / path
-            if not candidate.is_file() or candidate.is_symlink() or not candidate.resolve().is_relative_to(root.resolve()):
-                raise ValueError(f"Missing or unsafe image: {path}")
+            if ("path" in image) == ("url" in image):
+                raise ValueError(f"Image must have exactly one local path or hosted URL: {slug}")
             if not image["alt"] or not image["caption"]:
                 raise ValueError(f"Image alt text and caption required: {slug}")
             validate_url(image["source"])
-            if path.suffix == ".svg":
-                svg = candidate.read_text()
-                if re.search(r"<script|<foreignObject|\bon\w+\s*=|(?:href|src)\s*=\s*['\"](?:https?:|//|data:|javascript:)", svg, re.I):
-                    raise ValueError(f"SVG must be a self-contained static image: {path}")
+            if "url" in image:
+                # A public screenshot can be shown from the project's own GitHub
+                # repository without copying the image into our Pages artifact.
+                url = image["url"]
+                validate_url(url)
+                parts = urlsplit(url)
+                prefix = f"/rharriszzz/{slug}/{repo['branch']}/images/"
+                if (parts.netloc != "raw.githubusercontent.com"
+                        or parts.query or parts.fragment
+                        or not re.fullmatch(re.escape(prefix) + r"[A-Za-z0-9_.-]+\.(jpg|png|webp)", parts.path)):
+                    raise ValueError(f"Unexpected hosted project image: {slug}")
+            else:
+                path = Path(image["path"])
+                if not re.fullmatch(r"assets/images/[a-z0-9-]+\.(png|jpg|svg|webp)", path.as_posix()):
+                    raise ValueError(f"Unexpected image path: {path}")
+                candidate = root / path
+                if not candidate.is_file() or candidate.is_symlink() or not candidate.resolve().is_relative_to(root.resolve()):
+                    raise ValueError(f"Missing or unsafe image: {path}")
+                if path.suffix == ".svg":
+                    svg = candidate.read_text()
+                    if re.search(r"<script|<foreignObject|\bon\w+\s*=|(?:href|src)\s*=\s*['\\\"](?:https?:|//|data:|javascript:)", svg, re.I):
+                        raise ValueError(f"SVG must be a self-contained static image: {path}")
 
 
 def render_card(project):
@@ -76,7 +90,7 @@ def render_card(project):
     description = f'<p class="card-description">{escape(p["description"])}</p>'
     if "image" in p:
         im = p["image"]
-        media = (f'<figure><img class="project-image" src="{escape(im["path"])}" alt="{escape(im["alt"])}" '
+        media = (f'<figure><img class="project-image" src="{escape(im.get("path", im.get("url")))}" alt="{escape(im["alt"])}" '
                  f'width="800" height="500" loading="lazy" decoding="async">'
                  f'<figcaption>{escape(im["caption"])}</figcaption></figure>')
     else:
@@ -121,7 +135,7 @@ def build():
     # Keep editorially unlisted entries in source control, not in the published catalog.
     (output / "projects.json").write_text(json.dumps({**data, "projects": listed_projects}, ensure_ascii=False, indent=2) + "\n")
     files = set(STATIC_FILES)
-    files |= {p["image"]["path"] for p in listed_projects if "image" in p}
+    files |= {p["image"]["path"] for p in listed_projects if "image" in p and "path" in p["image"]}
     for name in sorted(files):
         source = ROOT / name
         if source.is_symlink() or not source.resolve().is_relative_to(ROOT):

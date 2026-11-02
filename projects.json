@@ -311,6 +311,12 @@
         "archived": false,
         "lastPushed": "2020-06-22",
         "branch": "master"
+      },
+      "image": {
+        "url": "https://raw.githubusercontent.com/rharriszzz/HIS_profile/master/images/Tree.jpg",
+        "alt": "Jupyter notebook displaying an HIS Profile Bokeh radial call tree, with nested red, orange, yellow, green, and blue arcs for profiled routines.",
+        "caption": "Sample HIS profiling call tree · Bokeh / Jupyter",
+        "source": "https://github.com/rharriszzz/HIS_profile/blob/master/images/Tree.jpg"
       }
     },
     {

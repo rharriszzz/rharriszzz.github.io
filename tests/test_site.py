@@ -66,6 +66,18 @@ class SiteTests(unittest.TestCase):
         self.assertNotIn("python-ibmdb", self.page)
         self.assertNotIn("python-ibmdb", (ROOT / "dist/projects.json").read_text())
 
+    def test_his_profile_uses_authentic_source_image(self):
+        his = next(p for p in self.data["projects"] if p["slug"] == "HIS_profile")
+        source = "https://raw.githubusercontent.com/rharriszzz/HIS_profile/master/images/Tree.jpg"
+        self.assertEqual(his["image"]["url"], source)
+        self.assertIn(f'src="{source}"', self.page)
+        self.assertNotIn("assets/images/HIS_profile.jpg", self.page)
+        data = copy.deepcopy(self.data)
+        bad = next(p for p in data["projects"] if p["slug"] == "HIS_profile")
+        bad["image"]["url"] = "https://example.com/Tree.jpg"
+        with self.assertRaises(ValueError):
+            build.validate(data)
+
     def test_listed_flag_must_be_boolean(self):
         data = copy.deepcopy(self.data)
         data["projects"][0]["listed"] = "false"
@@ -116,7 +128,7 @@ class SiteTests(unittest.TestCase):
 
     def test_publication_contains_only_allowlisted_files(self):
         expected = set(build.STATIC_FILES) | {"index.html", ".nojekyll", "projects.json"}
-        expected |= {p["image"]["path"] for p in self.data["projects"] if p.get("listed", True) and "image" in p}
+        expected |= {p["image"]["path"] for p in self.data["projects"] if p.get("listed", True) and "image" in p and "path" in p["image"]}
         actual = {p.relative_to(ROOT / "dist").as_posix() for p in (ROOT / "dist").rglob("*") if p.is_file()}
         self.assertEqual(actual, expected)
         self.assertFalse(any(p.is_symlink() for p in (ROOT / "dist").rglob("*")))
