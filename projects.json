@@ -235,7 +235,8 @@
         "archived": false,
         "lastPushed": "2026-09-10",
         "branch": "master"
-      }
+      },
+      "listed": false
     },
     {
       "slug": "fft-image-explorer",
