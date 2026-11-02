@@ -37,6 +37,21 @@ class SiteTests(unittest.TestCase):
         self.assertEqual(cards, [p["slug"] for p in self.data["projects"] if p.get("listed", True)])
         self.assertNotIn("{{", self.page)
 
+    def test_one_ordered_project_grid_without_search_or_featured_sections(self):
+        listed = [p for p in self.data["projects"] if p.get("listed", True)]
+        self.assertIn('<div class="project-grid">', self.page)
+        self.assertNotIn('Selected projects', self.page)
+        self.assertNotIn('More from the collection', self.page)
+        self.assertNotIn('id="filters"', self.page)
+        self.assertNotIn('id="search"', self.page)
+        self.assertNotIn('app.js', self.page)
+        self.assertNotIn('class="secondary-card"', self.page)
+        self.assertEqual(sum(1 for tag, attrs in self.doc.elements
+                             if tag == "article" and attrs.get("class") == "project-card"), len(listed))
+        self.assertEqual(sum(1 for tag, attrs in self.doc.elements if tag == "h3"), len(listed))
+        self.assertEqual(listed[0]["slug"], "reversi")
+        self.assertEqual(listed[-1]["slug"], "HIS_profile")
+
     def test_unlisted_projects_do_not_leak_into_published_site_or_catalog(self):
         unlisted = {p["slug"] for p in self.data["projects"] if not p.get("listed", True)}
         self.assertEqual(unlisted, {"sound", "zos_python", "izODA.github.io", "numpy"})
@@ -89,7 +104,6 @@ class SiteTests(unittest.TestCase):
                 self.assertIn("width", attrs)
                 self.assertIn("height", attrs)
         self.assertIn('class="skip-link"', self.page)
-        self.assertIn('role="status"', self.page)
         self.assertIn('lang="en"', self.page)
         self.assertIn('name="viewport"', self.page)
 

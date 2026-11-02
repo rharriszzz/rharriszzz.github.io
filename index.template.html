@@ -13,7 +13,6 @@
   <link rel="canonical" href="https://rharriszzz.github.io/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
   <title>Richard Harris — Projects</title>
 </head>
 <body>
@@ -44,31 +43,10 @@
 
     <section id="projects" class="collection" aria-labelledby="projects-heading">
       <div class="section-head">
-        <div><p class="eyebrow">The collection</p><h2 id="projects-heading">Find a project</h2></div>
-        <p class="section-description">Try an app, follow an experiment,<br>or start with the source.</p>
+        <div><p class="eyebrow">The collection</p><h2 id="projects-heading">Projects</h2></div>
+        <p class="section-description">Explore the projects in order,<br>or visit their source repositories.</p>
       </div>
-      <form id="filters" class="filters" role="search" aria-label="Filter projects" hidden>
-        <div class="search-field"><label for="search">Search projects</label><input id="search" type="search" name="q" placeholder="Name, topic, or technology…" autocomplete="off"></div>
-        <fieldset><legend class="sr-only">Project category</legend><div class="filter-buttons">
-          <button type="button" data-filter="all" aria-pressed="true">All projects</button>
-          <button type="button" data-filter="browser" aria-pressed="false">Browser apps</button>
-          <button type="button" data-filter="research" aria-pressed="false">Research</button>
-          <button type="button" data-filter="visualization" aria-pressed="false">Visualization</button>
-          <button type="button" data-filter="craft" aria-pressed="false">Craft &amp; geometry</button>
-          <button type="button" data-filter="tools" aria-pressed="false">Tools</button>
-        </div></fieldset>
-      </form>
-      <p id="results" class="results" role="status" aria-live="polite">{{PROJECT_COUNT}} projects · {{FEATURED_COUNT}} selected below</p>
-      <section id="featured-section" aria-labelledby="featured-heading">
-        <h3 id="featured-heading" class="group-heading">Selected projects <span>A closer look</span></h3>
-        <div class="project-grid">{{FEATURED_PROJECTS}}</div>
-      </section>
-      <section id="more-section" class="more-section" aria-labelledby="more-heading">
-        <h3 id="more-heading" class="group-heading">More from the collection <span>Supporting tools &amp; selected historical work</span></h3>
-        <div class="secondary-grid">{{OTHER_PROJECTS}}</div>
-      </section>
-      <div id="empty-state" class="empty-state" hidden><h3>No matching projects</h3><p>Try another topic or clear the filters.</p><button type="button" id="reset">Show all projects</button></div>
-      <noscript><p>All projects and links are available above. JavaScript adds optional search and category filters.</p></noscript>
+      <div class="project-grid">{{PROJECTS}}</div>
     </section>
 
     <section id="build" class="build-section" aria-labelledby="build-heading">

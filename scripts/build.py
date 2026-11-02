@@ -10,7 +10,7 @@ from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 CATEGORIES = {"games", "tools", "research", "visualization", "craft"}
-STATIC_FILES = ("style.css", "app.js", "assets/favicon.svg")
+STATIC_FILES = ("style.css", "assets/favicon.svg")
 
 
 def escape(value):
@@ -42,7 +42,7 @@ def validate(data, root=ROOT):
         for key in ("title", "description", "technology", "kind"):
             if not isinstance(project[key], str) or not project[key].strip():
                 raise ValueError(f"Missing {key}: {slug}")
-        if (type(project["featured"]) is not bool or type(project["browserApp"]) is not bool
+        if (type(project["browserApp"]) is not bool
                 or type(project.get("listed", True)) is not bool):
             raise ValueError(f"Expected boolean flags: {slug}")
         if "site" in project:
@@ -68,24 +68,20 @@ def validate(data, root=ROOT):
 
 def render_card(project):
     p = project
-    search = " ".join([p["slug"], p["title"], p["kind"], p["description"], p["technology"], p.get("note", ""), *p["categories"]])
-    attrs = (f'data-project="{escape(p["slug"])}" data-categories="{escape(" ".join(p["categories"]))}" '
-             f'data-browser="{str(p["browserApp"]).lower()}" data-search="{escape(search)}"')
+    attrs = f'data-project="{escape(p["slug"])}"'
     kind = f'<p class="card-kind{" browser" if p["browserApp"] else ""}">{escape(p["kind"])}</p>'
     repo = (f'<a href="{escape(p["repository"]["url"])}" aria-label="{escape(p["title"])} — GitHub Repository">'
             'GitHub Repository <span aria-hidden="true">↗</span></a>')
-    title = f'<h4>{escape(p["title"])}</h4>'
+    title = f'<h3>{escape(p["title"])}</h3>'
     description = f'<p class="card-description">{escape(p["description"])}</p>'
-    if not p["featured"]:
-        return f'<article class="secondary-card" {attrs}>{kind}{title}{description}{repo}</article>'
     if "image" in p:
         im = p["image"]
         media = (f'<figure><img class="project-image" src="{escape(im["path"])}" alt="{escape(im["alt"])}" '
                  f'width="800" height="500" loading="lazy" decoding="async">'
                  f'<figcaption>{escape(im["caption"])}</figcaption></figure>')
     else:
-        media = (f'<div class="image-placeholder" aria-label="No application screenshot available">'
-                 f'<span>{escape(p.get("placeholder", p["title"]))}</span><small>{escape(p.get("placeholderDetail", "Local application · source available"))}</small></div>')
+        media = (f'<div class="image-placeholder" aria-label="No project image available">'
+                 f'<span>{escape(p.get("placeholder", p["title"]))}</span><small>{escape(p.get("placeholderDetail", "Repository and source code"))}</small></div>')
     note = f'<p class="card-note">{escape(p["note"])}</p>' if p.get("note") else ""
     live = (f'<a class="live-link" href="{escape(p["site"]["url"])}" aria-label="{escape(p["title"])} — Live Site">'
             'Live Site <span aria-hidden="true">↗</span></a>') if "site" in p else ""
@@ -99,9 +95,7 @@ def render(data):
     date = datetime.date.fromisoformat(data["verifiedOn"])
     replacements = {
         "PROJECT_COUNT": str(len(projects)),
-        "FEATURED_COUNT": str(sum(p["featured"] for p in projects)),
-        "FEATURED_PROJECTS": "\n".join(render_card(p) for p in projects if p["featured"]),
-        "OTHER_PROJECTS": "\n".join(render_card(p) for p in projects if not p["featured"]),
+        "PROJECTS": "\n".join(render_card(p) for p in projects),
         "VERIFIED_ON": date.isoformat(),
         "VERIFIED_LABEL": f"{date.strftime('%B')} {date.day}, {date.year}",
     }
