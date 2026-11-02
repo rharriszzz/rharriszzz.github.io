@@ -63,7 +63,8 @@ class SiteTests(unittest.TestCase):
     def test_unlisted_projects_do_not_leak_into_published_site_or_catalog(self):
         unlisted = {p["slug"] for p in self.data["projects"] if not p.get("listed", True)}
         self.assertEqual(unlisted, {"sound", "zos_python", "izODA.github.io", "numpy",
-                                    "navier-stokes-vortex-lab"})
+                                    "navier-stokes-vortex-lab",
+                                    "navier-stokes-physical-approximation"})
         published = json.loads((ROOT / "dist/projects.json").read_text())
         self.assertEqual(
             [p["slug"] for p in published["projects"]],
@@ -73,7 +74,7 @@ class SiteTests(unittest.TestCase):
             self.assertNotIn(f'data-project="{slug}"', self.page)
         self.assertIn('data-project="HIS_profile"', self.page)
         self.assertNotIn('data-project="navier-stokes-vortex-lab"', self.page)
-        self.assertIn('data-project="navier-stokes-physical-approximation"', self.page)
+        self.assertNotIn('data-project="navier-stokes-physical-approximation"', self.page)
         self.assertNotIn("python-ibmdb", self.page)
         self.assertNotIn("python-ibmdb", (ROOT / "dist/projects.json").read_text())
 
