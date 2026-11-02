@@ -27,7 +27,7 @@ GitHub’s archived flag or an assertion that the code is unsupported.
 | bead_map | 2025-04-28 | Original; bead-detection experiments | No published site found; Pages disabled | No README; bead_map.py, bracelet-pattern-extractor.py and mask images |
 | hsv_tools | 2025-04-26 | Original; image-analysis utilities | No published site found; Pages disabled | No README; hsv_picker.py, hsv_counts.py, requirements and masks |
 | sound | 2017-07-30 | Original; historical Fourier/audio experiments | No published site found; Pages disabled | No README; test.c, fft.c, harmonics.c and plotting scripts |
-| HIS_profile | 2020-06-22 | Original repository; historical Rocket Software / z/OS tooling | No published site found; Pages disabled | README, C/Python package and notebook tree, existing tree visualization; no ownership claim over employer code |
+| HIS_profile | 2020-06-22 | Original repository; historical Rocket Software / z/OS tooling | No published site found; Pages disabled | README, C/Python package, notebook tree, and published `images/Tree.jpg` Bokeh radial profiling example; no ownership claim over employer code |
 | zos_python | 2020-09-21 | Original repository; historical z/OS tooling | No published site found; Pages disabled | No README; setup.py, package initialization, system-service source/test tree |
 | izODA.github.io | 2017-10-13 | Original repository; historical IBM documentation | Metadata homepage https://IzODA.github.io/ returns 404; account copy has Pages disabled | README, index.html and documentation/image tree; no internal IBM links copied to the index |
 | numpy | 2019-03-14 | Fork; historical | Upstream homepage is not this fork’s live site; no live link offered | README and scientific package/build/test tree; no upstream branding copied |
@@ -65,8 +65,9 @@ but retain their metadata in source control. Sound may be restored later.
 The Python IBM DB fork was deleted from GitHub by its owner and was removed
 from this source catalog; the original 2026-11-01 review is historical. The
 published projects.json contains listed entries only.
-Existing HIS Profile and image-mask figures were inspected but not copied into
-the index. Historical forks retain explicit fork labels.
+The HIS Profile card embeds the authentic public `images/Tree.jpg` from its
+own repository without copying it into the index; image-mask figures were
+inspected but not copied into the index. Historical forks retain explicit fork labels.
 
 ## Verification scope
 
