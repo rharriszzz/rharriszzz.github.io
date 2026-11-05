@@ -51,7 +51,8 @@ it contains no browser toolbar, account information, or local filesystem paths.
 The arXiv Shelf screenshot comes from the already public `docs/assets/` landing
 page asset, not from a private local library. It is labeled as a browser-edition
 screenshot, not as the public introduction’s UI. Beads uses an original input
-photograph. Madweave uses its committed interface image. Vortex Lab uses its
+photograph. MadWeave embeds a cropped corner-view screenshot from its source
+repository, refreshed on 2026-11-05 as documented below. Vortex Lab uses its
 committed illustrative tank preview. Physical Approximation uses the published
 explicit comparison plot, whose title states that nonlinear core corrections
 are omitted. Symphonium uses its generated sampler SVG, not a photo of a tested
@@ -124,6 +125,20 @@ Its [README](https://github.com/rharriszzz/hsv_tools/blob/main/README.md) and
 record the source photograph, exact sample coordinates, tolerance settings and
 checks. The central directory references the source image rather than
 duplicating it.
+
+### MadWeave — 2026-11-05 corner preview
+
+The existing MadWeave card now shows the source repository's
+[`images/homepage-card.png`](https://github.com/rharriszzz/madweave/blob/master/images/homepage-card.png),
+a 527 × 524 screenshot of the colored corner diagram. Translucent blue, coral
+and violet strips overlap two opaque gold/teal accents. The source capture
+script crops the actual diagram viewport; the directory embeds the hosted PNG.
+
+MadWeave commit `ab2ae12` published this reviewed image before the directory
+update. Regenerate it with `npm run screenshots` in the MadWeave repository.
+The card description now mentions flat/corner views and transparency; the note
+retains the mouse/trackpad guidance and identifies corner views as diagrams.
+This refresh changes only the existing MadWeave card.
 
 ## Editorial note — the Navier–Stokes projects
 

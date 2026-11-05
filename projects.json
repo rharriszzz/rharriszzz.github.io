@@ -73,21 +73,21 @@
       ],
       "kind": "Browser app · interactive weaving editor",
       "browserApp": true,
-      "description": "Design triaxial weaves with three directions of interlacing strips. Explore patterns, colors, layers and spacing; save editable projects for offline use or export SVG artwork.",
+      "description": "Draw flat and corner weaves. Choose color patterns, paint individual strips, and adjust transparency; save editable projects or export SVG artwork.",
       "technology": "JavaScript · SVG",
-      "note": "Save and reopen complete projects, including original editable SVG files. Use a mouse or trackpad; full keyboard/touch controls remain future work.",
+      "note": "A mouse or trackpad works best. Corner views are diagrams, not fabrication templates.",
       "image": {
-        "path": "assets/images/madweave.png",
-        "alt": "Madweave interface showing a pink, yellow, and purple triaxial weave with color and pattern controls.",
-        "caption": "Existing Madweave interface image",
-        "source": "https://github.com/rharriszzz/madweave/blob/master/madweave.png"
+        "url": "https://raw.githubusercontent.com/rharriszzz/madweave/master/images/homepage-card.png",
+        "alt": "Corner weave with translucent blue, coral and violet strips and opaque gold and teal strips.",
+        "caption": "Corner weave with color and transparency",
+        "source": "https://github.com/rharriszzz/madweave/blob/master/images/homepage-card.png"
       },
       "repository": {
         "url": "https://github.com/rharriszzz/madweave",
         "public": true,
         "fork": false,
         "archived": false,
-        "lastPushed": "2026-11-01",
+        "lastPushed": "2026-11-05",
         "branch": "master"
       },
       "site": {

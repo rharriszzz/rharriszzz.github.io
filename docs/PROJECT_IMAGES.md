@@ -89,6 +89,20 @@ Review the 1600 × 1000 original and the 400 × 250 preview before
 publishing. The directory embeds the stable hosted PNG from the
 source repository without copying it.
 
+## MadWeave: capture the colored corner preview
+
+MadWeave maintains
+[`images/homepage-card.png`](https://github.com/rharriszzz/madweave/blob/master/images/homepage-card.png).
+Run `npm run screenshots` in that repository; its
+[`scripts/capture_readme.cjs`](https://github.com/rharriszzz/madweave/blob/master/scripts/capture_readme.cjs)
+also captures the diagram viewport from the colored corner example. This gives
+the small card a readable preview of strip coloring and transparency.
+
+Review and publish the source PNG first. The directory uses its stable hosted
+URL and the factual caption “Corner weave with color and transparency.”
+See [MadWeave screenshot reproduction](https://github.com/rharriszzz/madweave/blob/master/docs/SCREENSHOTS.md)
+for the palette, opacity and capture settings.
+
 ## Validate and publish an index change
 
 If image metadata changes, update `projects.json`, the provenance notes in
