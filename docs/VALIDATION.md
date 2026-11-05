@@ -263,3 +263,31 @@ further scientific investigation.
 The existing no-leakage regression test now excludes both Navier–Stokes
 cards from the generated page and published project catalog. Other
 projects, ordering, images, and page layout are unchanged.
+
+
+## MadWeave corner preview — 2026-11-05 (America/New_York)
+
+A scoped refresh of the existing MadWeave card adds a small colored corner
+preview and mentions flat/corner views, individual strip painting and transparency.
+Other project entries, their order, the page template and stylesheet are retained.
+The full-inventory `verifiedOn` date remains 2026-11-01.
+
+MadWeave commit `ab2ae12` published `images/homepage-card.png` first. This actual
+527 × 524 diagram-viewport capture is 88,556 bytes. The public raw PNG matches
+the reviewed source SHA-256
+`1ae85d3c1d4641f58e4056b8ac8cd7ece72336f0b66761d2372c8ef93d967cc8`.
+The source repository's screenshot command reproduces it alongside its README
+figures; the index embeds the owning repository's stable raw URL.
+
+Local validation passed all 18 standard-library tests, the 10-card/9-file build,
+and all 35 external link checks. Chromium inspected the card at 1280, 390 and
+320 CSS pixels, decoded the real public PNG without a request override, checked
+keyboard focus and horizontal bounds, and followed the card through the project
+site into the working 480°/24-strip corner editor.
+
+Index commit `06dd6d5` deployed successfully in
+[workflow 42123450220](https://github.com/rharriszzz/rharriszzz.github.io/actions/runs/42123450220).
+Live Chromium checks at the same three widths confirmed the image, description,
+10-card public catalog and horizontal bounds. All 43 live page/asset/provenance
+links passed `scripts/check_links.py --base-url https://rharriszzz.github.io/`.
+The default homepage URL also serves the updated card.
