@@ -77,10 +77,10 @@
       "technology": "JavaScript · SVG",
       "note": "A mouse or trackpad works best. Corner views are diagrams, not fabrication templates.",
       "image": {
-        "url": "https://raw.githubusercontent.com/rharriszzz/madweave/master/images/homepage-card.png",
-        "alt": "Corner weave with translucent blue, coral and violet strips and opaque gold and teal strips.",
-        "caption": "Corner weave with color and transparency",
-        "source": "https://github.com/rharriszzz/madweave/blob/master/images/homepage-card.png"
+        "url": "https://raw.githubusercontent.com/rharriszzz/madweave/master/images/homepage-original.png",
+        "alt": "Original pink, gold and violet MadWeave design with six strips in each direction and the editor controls.",
+        "caption": "Original MadWeave design · current editor",
+        "source": "https://github.com/rharriszzz/madweave/blob/master/images/homepage-original.png"
       },
       "repository": {
         "url": "https://github.com/rharriszzz/madweave",

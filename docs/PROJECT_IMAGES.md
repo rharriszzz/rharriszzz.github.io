@@ -89,19 +89,21 @@ Review the 1600 × 1000 original and the 400 × 250 preview before
 publishing. The directory embeds the stable hosted PNG from the
 source repository without copying it.
 
-## MadWeave: capture the colored corner preview
+## MadWeave: capture the original design
 
 MadWeave maintains
-[`images/homepage-card.png`](https://github.com/rharriszzz/madweave/blob/master/images/homepage-card.png).
+[`images/homepage-original.png`](https://github.com/rharriszzz/madweave/blob/master/images/homepage-original.png).
 Run `npm run screenshots` in that repository; its
 [`scripts/capture_readme.cjs`](https://github.com/rharriszzz/madweave/blob/master/scripts/capture_readme.cjs)
-also captures the diagram viewport from the colored corner example. This gives
-the small card a readable preview of strip coloring and transparency.
+also copies the first README screenshot to this file. It shows the original
+fiberwoman.com pink, gold and violet flat weave in the current editor, including
+its controls. The capture checks all strip and clipping paths against the
+original SVG before taking the picture.
 
 Review and publish the source PNG first. The directory uses its stable hosted
-URL and the factual caption “Corner weave with color and transparency.”
+URL and the caption “Original MadWeave design · current editor.”
 See [MadWeave screenshot reproduction](https://github.com/rharriszzz/madweave/blob/master/docs/SCREENSHOTS.md)
-for the palette, opacity and capture settings.
+for the original-design comparison and capture settings.
 
 ## Validate and publish an index change
 
