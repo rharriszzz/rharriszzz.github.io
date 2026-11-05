@@ -291,3 +291,23 @@ Live Chromium checks at the same three widths confirmed the image, description,
 10-card public catalog and horizontal bounds. All 43 live page/asset/provenance
 links passed `scripts/check_links.py --base-url https://rharriszzz.github.io/`.
 The default homepage URL also serves the updated card.
+
+
+## MadWeave original design — 2026-11-05 (America/New_York)
+
+At the author's request, the card now shows the original pink, gold and violet
+flat weave in the current editor, including its controls. Only its image metadata
+and provenance notes changed. MadWeave commit `25fbd35` published
+`images/homepage-original.png` first. The capture checks all 18 strips and
+three clipping paths against the original SVG; the PNG is byte-identical to the
+first README picture, 920 × 753 pixels and 94,805 bytes. The public PNG matches
+SHA-256 `b4741a2b13420e0efcccb17667812d019c1116cad5cc03769633dc937e7bad57`.
+
+All 18 index tests, the 10-card/9-file build, 35 external links, and whitespace
+checks passed. Local and live Chromium checks at 1280, 390 and 320 CSS-pixel
+widths decoded the actual public image, confirmed all 10 cards, keyboard focus
+and no horizontal overflow. This is desktop responsive emulation.
+
+Index commit `e3a71c3` deployed successfully in
+[workflow 42128551287](https://github.com/rharriszzz/rharriszzz.github.io/actions/runs/42128551287).
+The default homepage URL serves the intended image; all 43 live links passed.
