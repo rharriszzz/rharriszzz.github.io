@@ -79,6 +79,11 @@ def candidate(path):
     if any(x in SKIP_DIRS for x in parts[:-1]):
         return False
     name = parts[-1]
+    # Release notes, historical reports and this audit's own lifecycle policy
+    # describe past versions; they are not installation recommendations.
+    if name in {"toolchain_audit.md", "testing.md", "mac_testing.md",
+                "python_setup.md", "historical_readme.md"}:
+        return False
     if len(parts) == 1 and (
         name.startswith(("readme", "requirements")) or name in {
             "package.json", "pyproject.toml", ".python-version", ".nvmrc",
