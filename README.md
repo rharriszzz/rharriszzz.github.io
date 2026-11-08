@@ -85,7 +85,7 @@ needs only a commit in its source repository.
 
 ## Build, test, and preview
 
-Requires Python 3.10+. No third-party Python packages, npm installation,
+Use Python 3.15 (or 3.14). No third-party Python packages, npm installation,
 framework, or package lockfile are needed.
 
 ```sh
