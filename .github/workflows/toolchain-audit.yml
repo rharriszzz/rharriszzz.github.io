@@ -1,0 +1,37 @@
+name: Audit public repository toolchains
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/audit_toolchains.py
+      - tests/test_toolchain_audit.py
+      - docs/TOOLCHAIN_AUDIT.md
+      - .github/workflows/toolchain-audit.yml
+      - projects.json
+permissions:
+  contents: read
+jobs:
+  inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.15'
+      - name: Test scanner without network
+        run: python -m unittest discover -s tests -p 'test_toolchain_audit.py' -v
+      - name: Audit all public repositories (read-only)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p audit
+          python scripts/audit_toolchains.py --all-public > audit/public-toolchain-audit.md
+          head -n 30 audit/public-toolchain-audit.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v7
+        with:
+          name: public-toolchain-audit
+          path: audit/public-toolchain-audit.md
+          if-no-files-found: error
