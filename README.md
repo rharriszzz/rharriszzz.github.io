@@ -140,6 +140,12 @@ gh run list --workflow pages.yml
 
 ## Maintenance
 
+Use the [public repository toolchain audit](docs/TOOLCHAIN_AUDIT.md) to
+check maintained Python, Node.js, GitHub Actions and website dependencies across
+listed projects. It prioritizes public-facing sites, treats github-pages-discovery
+as site-ready, and excludes the untestable HIS_profile repository.
+
+
 An occasional manual review is sufficient. There is no recurring process or
 runtime API dependency. To discover new public repositories without listing
 private repositories:
