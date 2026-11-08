@@ -23,7 +23,7 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
-          python-version: '3.13'
+          python-version: '3.15'
       - name: Validate the catalog, generated pages, and publication allowlist
         run: python3 -m unittest discover -s tests -v
       - uses: actions/upload-pages-artifact@v5
